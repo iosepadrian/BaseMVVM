@@ -4,10 +4,10 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
+import com.zynksoftware.base.developeroptions.DeveloperViewModel
 import com.zynksoftware.base.ui.common.SharedViewModel
 import com.zynksoftware.base.utils.StringResourceProvider
 import okhttp3.OkHttpClient
-import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit
 
 val viewModelModule = module {
     viewModel { SharedViewModel() }
+    viewModel { DeveloperViewModel() }
 }
 
 val repositoryModule = module {

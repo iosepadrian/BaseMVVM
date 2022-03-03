@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\Adrian Iosep\\AndroidStudioProjects\\android-base-mvvm\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\component_loading_layout.xml",
+        "source": "C:\\Users\\Adrian Iosep\\AndroidStudioProjects\\android-base-mvvm\\app\\src\\main\\res\\layout\\component_loading_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Adrian Iosep\\AndroidStudioProjects\\android-base-mvvm\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Adrian Iosep\\AndroidStudioProjects\\android-base-mvvm\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Adrian Iosep\\AndroidStudioProjects\\android-base-mvvm\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_developer.xml",
+        "source": "C:\\Users\\Adrian Iosep\\AndroidStudioProjects\\android-base-mvvm\\app\\src\\main\\res\\layout\\activity_developer.xml"
+    }
+]

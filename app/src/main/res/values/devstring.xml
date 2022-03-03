@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="version_name">Version Name: &#160;</string>
+    <string name="screen_type">Screen type: &#160;</string>
+    <string name="keep_screen_on_off">Keep screen ON / OFF</string>
+    <string name="device_details">Device details:&#160;</string>
+    <string name="brand">Brand:&#160;</string>
+    <string name="deviceID">DeviceID:&#160;</string>
+    <string name="model">Model:&#160;</string>
+    <string name="id">ID:&#160;</string>
+    <string name="sdk">SDK:&#160;</string>
+    <string name="manufacture">Manufacture:&#160;</string>
+    <string name="user">User:&#160;</string>
+    <string name="type">Type:&#160;</string>
+    <string name="base">Base:&#160;</string>
+    <string name="incremental">Incremental:&#160;</string>
+    <string name="board">Board:&#160;</string>
+    <string name="host">Host:&#160;</string>
+    <string name="fingerprint">Fingerprint:&#160;</string>
+    <string name="version_code">Version code:&#160;</string>
+    <string name="new_line">\n</string>
+    <string name="ldpi">LDPI</string>
+    <string name="mdpi">MDPI</string>
+    <string name="hdpi">HDPI</string>
+    <string name="xhdpi">XHDPI</string>
+    <string name="xxhdpi">XXHDPI</string>
+    <string name="xxxhdpi">XXXHDPI</string>
+</resources>
