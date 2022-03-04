@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_height">50dp</dimen>
+    <dimen name="back_button_size">50dp</dimen>
+
+    <dimen name="padding_mini">12dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+</resources>

@@ -17,8 +17,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         sharedViewModel.isLoading.observe(this) {
             binding.loadingComponent.setIsLoading(it)
         }
-
-        sharedViewModel.setIsLoading(true)
     }
 
 }
