@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="loading_background">#80181818</color>
+
+    <color name="bottom_navigation_color">#252233</color>
+
 </resources>

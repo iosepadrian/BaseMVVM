@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
 import com.zynksoftware.base.ui.common.SharedViewModel
+import com.zynksoftware.base.ui.pager.PagerDashboardViewModel
 import com.zynksoftware.base.utils.StringResourceProvider
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidApplication
@@ -16,6 +17,7 @@ import java.util.concurrent.TimeUnit
 
 val viewModelModule = module {
     viewModel { SharedViewModel() }
+    viewModel { PagerDashboardViewModel() }
 }
 
 val repositoryModule = module {
