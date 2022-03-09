@@ -109,4 +109,7 @@ dependencies {
         transitive = true
     }
 
+    //LeakCanary
+    //debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.8.1'
+
 }

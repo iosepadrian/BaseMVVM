@@ -4,10 +4,10 @@ package com.zynksoftware.base.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Switch;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -21,29 +21,69 @@ public final class ActivityDeveloperBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final TextView buildConfigTextView;
+
+  @NonNull
   public final TextView deviceDetailsTextView;
 
   @NonNull
   public final TextView deviceDetailsValueTextView;
 
   @NonNull
-  public final Switch keepScreenOnOffSwitch;
+  public final View divider1;
 
   @NonNull
-  public final TextView screenTypeTextView;
+  public final View divider2;
+
+  @NonNull
+  public final View divider3;
+
+  @NonNull
+  public final View divider4;
+
+  @NonNull
+  public final TextView keepScreenOnDescriptionTextView;
+
+  @NonNull
+  public final SwitchCompat keepScreenOnOffSwitch;
+
+  @NonNull
+  public final TextView keepScreenOnTextView;
+
+  @NonNull
+  public final SwitchCompat logsOnOffSwitch;
+
+  @NonNull
+  public final TextView registerLogsDescriptionTextView;
+
+  @NonNull
+  public final TextView registerlogsOnOffTextView;
 
   @NonNull
   public final TextView versionNameTextView;
 
   private ActivityDeveloperBinding(@NonNull ConstraintLayout rootView,
-      @NonNull TextView deviceDetailsTextView, @NonNull TextView deviceDetailsValueTextView,
-      @NonNull Switch keepScreenOnOffSwitch, @NonNull TextView screenTypeTextView,
-      @NonNull TextView versionNameTextView) {
+      @NonNull TextView buildConfigTextView, @NonNull TextView deviceDetailsTextView,
+      @NonNull TextView deviceDetailsValueTextView, @NonNull View divider1, @NonNull View divider2,
+      @NonNull View divider3, @NonNull View divider4,
+      @NonNull TextView keepScreenOnDescriptionTextView,
+      @NonNull SwitchCompat keepScreenOnOffSwitch, @NonNull TextView keepScreenOnTextView,
+      @NonNull SwitchCompat logsOnOffSwitch, @NonNull TextView registerLogsDescriptionTextView,
+      @NonNull TextView registerlogsOnOffTextView, @NonNull TextView versionNameTextView) {
     this.rootView = rootView;
+    this.buildConfigTextView = buildConfigTextView;
     this.deviceDetailsTextView = deviceDetailsTextView;
     this.deviceDetailsValueTextView = deviceDetailsValueTextView;
+    this.divider1 = divider1;
+    this.divider2 = divider2;
+    this.divider3 = divider3;
+    this.divider4 = divider4;
+    this.keepScreenOnDescriptionTextView = keepScreenOnDescriptionTextView;
     this.keepScreenOnOffSwitch = keepScreenOnOffSwitch;
-    this.screenTypeTextView = screenTypeTextView;
+    this.keepScreenOnTextView = keepScreenOnTextView;
+    this.logsOnOffSwitch = logsOnOffSwitch;
+    this.registerLogsDescriptionTextView = registerLogsDescriptionTextView;
+    this.registerlogsOnOffTextView = registerlogsOnOffTextView;
     this.versionNameTextView = versionNameTextView;
   }
 
@@ -74,6 +114,12 @@ public final class ActivityDeveloperBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.buildConfigTextView;
+      TextView buildConfigTextView = ViewBindings.findChildViewById(rootView, id);
+      if (buildConfigTextView == null) {
+        break missingId;
+      }
+
       id = R.id.deviceDetailsTextView;
       TextView deviceDetailsTextView = ViewBindings.findChildViewById(rootView, id);
       if (deviceDetailsTextView == null) {
@@ -86,15 +132,63 @@ public final class ActivityDeveloperBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.divider1;
+      View divider1 = ViewBindings.findChildViewById(rootView, id);
+      if (divider1 == null) {
+        break missingId;
+      }
+
+      id = R.id.divider2;
+      View divider2 = ViewBindings.findChildViewById(rootView, id);
+      if (divider2 == null) {
+        break missingId;
+      }
+
+      id = R.id.divider3;
+      View divider3 = ViewBindings.findChildViewById(rootView, id);
+      if (divider3 == null) {
+        break missingId;
+      }
+
+      id = R.id.divider4;
+      View divider4 = ViewBindings.findChildViewById(rootView, id);
+      if (divider4 == null) {
+        break missingId;
+      }
+
+      id = R.id.keepScreenOnDescriptionTextView;
+      TextView keepScreenOnDescriptionTextView = ViewBindings.findChildViewById(rootView, id);
+      if (keepScreenOnDescriptionTextView == null) {
+        break missingId;
+      }
+
       id = R.id.keepScreenOnOffSwitch;
-      Switch keepScreenOnOffSwitch = ViewBindings.findChildViewById(rootView, id);
+      SwitchCompat keepScreenOnOffSwitch = ViewBindings.findChildViewById(rootView, id);
       if (keepScreenOnOffSwitch == null) {
         break missingId;
       }
 
-      id = R.id.screenTypeTextView;
-      TextView screenTypeTextView = ViewBindings.findChildViewById(rootView, id);
-      if (screenTypeTextView == null) {
+      id = R.id.keepScreenOnTextView;
+      TextView keepScreenOnTextView = ViewBindings.findChildViewById(rootView, id);
+      if (keepScreenOnTextView == null) {
+        break missingId;
+      }
+
+      id = R.id.logsOnOffSwitch;
+      SwitchCompat logsOnOffSwitch = ViewBindings.findChildViewById(rootView, id);
+      if (logsOnOffSwitch == null) {
+        break missingId;
+      }
+
+      id = R.id.registerLogsDescriptionTextView;
+      TextView registerLogsDescriptionTextView = ViewBindings.findChildViewById(rootView, id);
+      if (registerLogsDescriptionTextView == null) {
+        break missingId;
+      }
+
+      id = R.id.registerlogsOnOffTextView;
+      TextView registerlogsOnOffTextView = ViewBindings.findChildViewById(rootView, id);
+      if (registerlogsOnOffTextView == null) {
         break missingId;
       }
 
@@ -104,8 +198,10 @@ public final class ActivityDeveloperBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityDeveloperBinding((ConstraintLayout) rootView, deviceDetailsTextView,
-          deviceDetailsValueTextView, keepScreenOnOffSwitch, screenTypeTextView,
+      return new ActivityDeveloperBinding((ConstraintLayout) rootView, buildConfigTextView,
+          deviceDetailsTextView, deviceDetailsValueTextView, divider1, divider2, divider3, divider4,
+          keepScreenOnDescriptionTextView, keepScreenOnOffSwitch, keepScreenOnTextView,
+          logsOnOffSwitch, registerLogsDescriptionTextView, registerlogsOnOffTextView,
           versionNameTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);

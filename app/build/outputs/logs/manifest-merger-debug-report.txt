@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-29:12
+ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-33:12
 MERGED from [androidx.databinding:viewbinding:7.0.4] C:\Users\Adrian Iosep\.gradle\caches\transforms-3\835c36308f8dbdbe7e0c65aa882bbc29\transformed\jetified-viewbinding-7.0.4\AndroidManifest.xml:17:1-22:12
 MERGED from [io.insert-koin:koin-android:3.0.2] C:\Users\Adrian Iosep\.gradle\caches\transforms-3\3caedc3f16a479778cd8949fa3ecdfe1\transformed\jetified-koin-android-3.0.2\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.navigation:navigation-fragment-ktx:2.4.1] C:\Users\Adrian Iosep\.gradle\caches\transforms-3\c35f0e7b2caecbe9db4cb3bd9a4ff893\transformed\navigation-fragment-ktx-2.4.1\AndroidManifest.xml:17:1-24:12
@@ -105,25 +105,37 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Adrian Iosep\.gr
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Adrian Iosep\.gradle\caches\transforms-3\6bf69f6f22614500f896674c16c829ee\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\Adrian Iosep\.gradle\caches\transforms-3\fddd9e5434795b5c768b064588b7797f\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Adrian Iosep\.gradle\caches\transforms-3\d6ba484b266d5071fcf5bd79447bcec8\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-33:12
 	package
-		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:3:5-36
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:4:5-36
 		INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-29:12
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-33:12
 		INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-29:12
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:1-33:12
 		INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:5:5-81
+	android:name
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:5:22-78
+uses-permission#android.permission.READ_LOGS
+ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:6:5-7:47
+	tools:ignore
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:7:9-44
+	android:name
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:6:22-65
 application
-ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:5:5-27:19
+ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:9:5-31:19
 MERGED from [io.insert-koin:koin-android:3.0.2] C:\Users\Adrian Iosep\.gradle\caches\transforms-3\3caedc3f16a479778cd8949fa3ecdfe1\transformed\jetified-koin-android-3.0.2\AndroidManifest.xml:7:5-20
 MERGED from [io.insert-koin:koin-android:3.0.2] C:\Users\Adrian Iosep\.gradle\caches\transforms-3\3caedc3f16a479778cd8949fa3ecdfe1\transformed\jetified-koin-android-3.0.2\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Adrian Iosep\.gradle\caches\transforms-3\1ee4cab2b9ba60d6ab27fa06dfc70053\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
@@ -201,41 +213,41 @@ MERGED from [com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.7.0] C:\Users\Adrian Iosep\.gradle\caches\transforms-3\62bf208575a63fdb261dc1a431515e76\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:11:9-35
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:15:9-35
 	android:label
-		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:9:9-41
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:13:9-41
 	android:roundIcon
-		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:10:9-54
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:14:9-54
 	android:icon
-		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:8:9-43
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:7:9-36
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:11:9-36
 	android:theme
-		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:12:9-46
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:16:9-46
 	android:name
-		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:6:9-40
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:10:9-40
 activity#com.zynksoftware.base.developeroptions.DeveloperActivity
-ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:13:9-21:20
+ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:17:9-25:20
 	android:exported
-		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:15:13-36
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:19:13-36
 	android:name
-		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:14:13-63
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:18:13-63
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:16:13-20:29
+ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:20:13-24:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:17:17-69
+ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:21:17-69
 	android:name
-		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:17:25-66
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:19:17-77
+ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:23:17-77
 	android:name
-		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:19:27-74
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:23:27-74
 activity#com.zynksoftware.base.ui.MainActivity
-ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:22:9-26:20
+ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:26:9-30:20
 	android:exported
-		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:24:13-36
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:28:13-36
 	android:name
-		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:23:13-44
+		ADDED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml:27:13-44
 uses-sdk
 INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Adrian Iosep\AndroidStudioProjects\android-base-mvvm\app\src\main\AndroidManifest.xml

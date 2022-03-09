@@ -1,8 +1,8 @@
+com/zynksoftware/base/BuildConfig.java
+ com.zynksoftware.base.BuildConfig
 com/zynksoftware/base/databinding/ComponentLoadingLayoutBinding.java
  com.zynksoftware.base.databinding.ComponentLoadingLayoutBinding
 com/zynksoftware/base/databinding/ActivityDeveloperBinding.java
  com.zynksoftware.base.databinding.ActivityDeveloperBinding
 com/zynksoftware/base/databinding/ActivityMainBinding.java
  com.zynksoftware.base.databinding.ActivityMainBinding
-com/zynksoftware/base/BuildConfig.java
- com.zynksoftware.base.BuildConfig

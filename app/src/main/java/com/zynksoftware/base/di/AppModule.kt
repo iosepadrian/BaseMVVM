@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
 import com.zynksoftware.base.developeroptions.DeveloperViewModel
+import com.zynksoftware.base.developeroptions.LogProvider
 import com.zynksoftware.base.ui.common.SharedViewModel
 import com.zynksoftware.base.utils.StringResourceProvider
 import okhttp3.OkHttpClient
@@ -16,7 +17,7 @@ import java.util.concurrent.TimeUnit
 
 val viewModelModule = module {
     viewModel { SharedViewModel() }
-    viewModel { DeveloperViewModel() }
+    viewModel { DeveloperViewModel(get()) }
 }
 
 val repositoryModule = module {
@@ -28,7 +29,7 @@ val repositoryModule = module {
 
 val utilsModule = module {
     single { StringResourceProvider(get()) }
-
+    single { LogProvider(get())}
 //    single { provideMoshi() }
     single { provideOkHttpBuilder() }
 //    single { QuantoPayServiceProvider(get(), provideOkHttpBuilder().build()).createApiService() }

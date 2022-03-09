@@ -1289,6 +1289,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color dark_gray
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1337,6 +1338,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color letters_gray
 color loading_background
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
@@ -2694,6 +2696,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id buildConfigTextView
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -2758,6 +2761,10 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
+id divider1
+id divider2
+id divider3
+id divider4
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -2828,7 +2835,9 @@ id item4
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
+id keepScreenOnDescriptionTextView
 id keepScreenOnOffSwitch
+id keepScreenOnTextView
 id labeled
 id layout
 id left
@@ -2843,6 +2852,7 @@ id list_item
 id loadingBackground
 id loadingComponent
 id locale
+id logsOnOffSwitch
 id ltr
 id masked
 id match_constraint
@@ -2945,6 +2955,8 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id registerLogsDescriptionTextView
+id registerlogsOnOffTextView
 id reverseSawtooth
 id right
 id rightToLeft
@@ -2958,7 +2970,6 @@ id save_overlay_view
 id sawtooth
 id scale
 id screen
-id screenTypeTextView
 id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -3304,6 +3315,8 @@ string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
 string base
+string baseLogDirName
+string baseLogFileName
 string board
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
@@ -3348,7 +3361,13 @@ string id
 string incremental
 string item_view_role_description
 string keep_screen_on_off
+string keep_screen_on_off_text
 string ldpi
+string logSwitchSP
+string logs_disabled
+string logs_enabled
+string logs_on_off
+string logs_on_off_text
 string m3_ref_typeface_brand_display_regular
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
@@ -3441,6 +3460,9 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string screenSwitchSP
+string screen_on_disabled
+string screen_on_enabled
 string screen_type
 string sdk
 string search_menu_title

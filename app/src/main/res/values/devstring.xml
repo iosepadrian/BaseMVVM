@@ -3,6 +3,9 @@
     <string name="version_name">Version Name: &#160;</string>
     <string name="screen_type">Screen type: &#160;</string>
     <string name="keep_screen_on_off">Keep screen ON / OFF</string>
+    <string name="keep_screen_on_off_text">Enable keeping screen on for a easier debugging session</string>
+    <string name="logs_on_off">Register logs ON / OFF</string>
+    <string name="logs_on_off_text">Enable registering logs to monitor the user flow</string>
     <string name="device_details">Device details:&#160;</string>
     <string name="brand">Brand:&#160;</string>
     <string name="deviceID">DeviceID:&#160;</string>
@@ -25,4 +28,13 @@
     <string name="xhdpi">XHDPI</string>
     <string name="xxhdpi">XXHDPI</string>
     <string name="xxxhdpi">XXXHDPI</string>
+    <string name="logSwitchSP">logSwitch</string>
+    <string name="screenSwitchSP">screenSwitch</string>
+    <string name="baseLogDirName">logfiles</string>
+    <string name="baseLogFileName">logfile</string>
+    <string name="logs_enabled">Logs registering enabled</string>
+    <string name="logs_disabled">Logs registering disabled</string>
+    <string name="screen_on_enabled">Keep screen on enabled</string>
+    <string name="screen_on_disabled">Keep screen on disabled</string>
+    <string name="build_config">Build Config</string>
 </resources>
