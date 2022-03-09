@@ -14,7 +14,6 @@ class LogProvider(private val context: Context) : Runnable {
 
     companion object{
         private const val DEFAULT_FILE_NAME = "logfile"
-        private const val DEFAULT_DIR_NAME = "logfiles"
         private const val MAX_LINES_PER_FILE = 500
     }
 
@@ -37,7 +36,7 @@ class LogProvider(private val context: Context) : Runnable {
         stopped.set(false)
         while (running.get()) {
             try {
-                val dirPath = context.filesDir.absolutePath + File.separator.toString() + DEFAULT_DIR_NAME
+                val dirPath = context.filesDir.absolutePath + File.separator.toString() + DeveloperUtils.DEFAULT_DIR_NAME
                 val projDir = File(dirPath)
                 if (!projDir.exists()) {
                     projDir.mkdirs()

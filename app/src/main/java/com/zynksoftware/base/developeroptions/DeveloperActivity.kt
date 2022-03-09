@@ -29,13 +29,13 @@ class DeveloperActivity :
     private fun initLogsOnOffSwitch(switch: SwitchCompat) {
         switch.isChecked = developerViewModel.getLogsSwitch()
         if (switch.isChecked) {
-            Utils.deleteFilesBeforeStartingLogs(applicationContext)
+            DeveloperUtils.deleteFilesBeforeStartingLogs(applicationContext)
             logProvider.start()
         }
         switch.setOnCheckedChangeListener { _, isChecked ->
             val message: String
             if (isChecked) {
-                Utils.deleteFilesBeforeStartingLogs(applicationContext)
+                DeveloperUtils.deleteFilesBeforeStartingLogs(applicationContext)
                 logProvider.start()
                 message = getString(R.string.logs_enabled)
                 developerViewModel.setLogsSwitch(true)
