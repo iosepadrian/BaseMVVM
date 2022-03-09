@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--    Toolbar -->
+    <dimen name="toolbar_height">50dp</dimen>
+    <dimen name="back_button_size">50dp</dimen>
+
+
+<!--    Bottom Navigation-->
+    <dimen name="tab_item_selected_size">65dp</dimen>
+    <dimen name="tab_item_unselected_size">26dp</dimen>
+    <dimen name="bottom_bar_solid_size">50dp</dimen>
+    <dimen name="tab_item_margin_bottom">4dp</dimen>
+    <dimen name="tab_item_unselected_height">32dp</dimen>
+    <dimen name="tab_item_unselected_width">30dp</dimen>
+
+    <dimen name="padding_mini">12dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+</resources>

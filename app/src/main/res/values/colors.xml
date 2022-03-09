@@ -10,4 +10,7 @@
     <color name="dark_gray">#1a1a1a</color>
     <color name="letters_gray">#878787</color>
     <color name="loading_background">#80181818</color>
+
+    <color name="bottom_navigation_color">#252233</color>
+
 </resources>
