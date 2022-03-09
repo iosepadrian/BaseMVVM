@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
+import com.zynksoftware.base.developeroptions.DeveloperSessionManager
 import com.zynksoftware.base.developeroptions.DeveloperViewModel
 import com.zynksoftware.base.developeroptions.LogProvider
 import com.zynksoftware.base.ui.common.SharedViewModel
@@ -18,20 +19,21 @@ import java.util.concurrent.TimeUnit
 
 val viewModelModule = module {
     viewModel { SharedViewModel() }
-    viewModel { DeveloperViewModel(get()) }
+    viewModel { DeveloperViewModel(get(), get()) }
     viewModel { PagerDashboardViewModel() }
 }
 
 val repositoryModule = module {
 
     single { provideSharedPreferences(androidContext()) }
+    single { DeveloperSessionManager(get()) }
 //    single { SessionManager(get()) }
 //    single { CacheManager(get(), get()) }
 }
 
 val utilsModule = module {
     single { StringResourceProvider(get()) }
-    single { LogProvider(get())}
+    single { LogProvider(get()) }
 //    single { provideMoshi() }
     single { provideOkHttpBuilder() }
 //    single { QuantoPayServiceProvider(get(), provideOkHttpBuilder().build()).createApiService() }

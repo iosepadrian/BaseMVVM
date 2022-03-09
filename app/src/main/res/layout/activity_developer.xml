@@ -4,184 +4,163 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".developeroptions.DeveloperActivity"
     android:background="@color/dark_gray"
-    >
-
+    tools:context=".developeroptions.DeveloperActivity">
 
     <TextView
         android:id="@+id/buildConfigTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:layout_marginTop="@dimen/dev_base_margin"
         android:text="@string/build_config"
-        android:textStyle="bold"
         android:textColor="@color/white"
-        android:textSize="17sp" />
+        android:textSize="@dimen/dev_big_letter"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/versionNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/buildConfigTextView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:layout_marginTop="@dimen/comp_to_view_margin"
         android:textColor="@color/letters_gray"
-        android:textSize="13sp"
+        android:textSize="@dimen/dev_small_letter"
         android:textStyle="bold"
-        >
-
-    </TextView>
-
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buildConfigTextView" />
 
     <View
         android:id="@+id/divider1"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/dev_divider_height_dim"
+        android:layout_marginTop="5dp"
         android:background="@color/letters_gray"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/versionNameTextView"
-        android:layout_marginTop="5dp"/>
+        app:layout_constraintTop_toBottomOf="@id/versionNameTextView" />
 
     <TextView
         android:id="@+id/deviceDetailsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/divider1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-        android:textColor="@color/white"
-        android:textSize="17sp"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:layout_marginTop="@dimen/view_to_comp_margin"
         android:text="@string/device_details"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dev_big_letter"
         android:textStyle="bold"
-        >
-
-    </TextView>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider1" />
 
     <TextView
         android:id="@+id/deviceDetailsValueTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/deviceDetailsTextView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="@dimen/dev_base_margin"
         android:textColor="@color/letters_gray"
-        android:textSize="13sp"
-        >
-
-    </TextView>
+        android:textSize="@dimen/dev_small_letter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deviceDetailsTextView" />
 
     <View
         android:id="@+id/divider2"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/dev_divider_height_dim"
+        android:layout_marginTop="@dimen/comp_to_view_margin"
         android:background="@color/letters_gray"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/deviceDetailsValueTextView"
-        android:layout_marginTop="5dp"/>
-
-
-
-
+        app:layout_constraintTop_toBottomOf="@id/deviceDetailsValueTextView" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/keepScreenOnOffSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/divider2"
+        android:layout_marginEnd="@dimen/dev_base_margin"
         app:layout_constraintBottom_toBottomOf="@id/divider3"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginEnd="20dp">
-
-    </androidx.appcompat.widget.SwitchCompat>
+        app:layout_constraintTop_toTopOf="@id/divider2" />
 
     <TextView
         android:id="@+id/keepScreenOnTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/divider2"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:textStyle="bold"
-        android:textSize="17sp"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:layout_marginTop="@dimen/comp_to_view_margin"
+        android:text="@string/keep_screen_on_off"
         android:textColor="@color/white"
-        android:text="@string/keep_screen_on_off" />
+        android:textSize="@dimen/dev_big_letter"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider2" />
 
     <TextView
         android:id="@+id/keepScreenOnDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/keepScreenOnTextView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:maxWidth="250dp"
         android:text="@string/keep_screen_on_off_text"
         android:textColor="@color/letters_gray"
-        android:textSize="14sp"
-        android:maxWidth="250dp" />
+        android:textSize="@dimen/dev_medium_letter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/keepScreenOnTextView" />
 
     <View
         android:id="@+id/divider3"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/dev_divider_height_dim"
+        android:layout_marginTop="@dimen/view_to_comp_margin"
         android:background="@color/letters_gray"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/keepScreenOnDescriptionTextView"
-        android:layout_marginTop="5dp"/>
+        app:layout_constraintTop_toBottomOf="@id/keepScreenOnDescriptionTextView" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/logsOnOffSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/divider3"
+        android:layout_marginEnd="@dimen/dev_base_margin"
         app:layout_constraintBottom_toBottomOf="@id/divider4"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginEnd="20dp">
-
-    </androidx.appcompat.widget.SwitchCompat>
+        app:layout_constraintTop_toTopOf="@id/divider3" />
 
     <TextView
         android:id="@+id/registerlogsOnOffTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider3"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:textStyle="bold"
-        android:textSize="17sp"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:layout_marginTop="@dimen/view_to_comp_margin"
+        android:text="@string/logs_on_off"
         android:textColor="@color/white"
-        android:text="@string/logs_on_off" />
+        android:textSize="@dimen/dev_big_letter"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider3" />
 
     <TextView
         android:id="@+id/registerLogsDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/registerlogsOnOffTextView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:maxWidth="250dp"
         android:text="@string/logs_on_off_text"
         android:textColor="@color/letters_gray"
-        android:textSize="14sp"
-        android:maxWidth="250dp" />
+        android:textSize="@dimen/dev_medium_letter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/registerlogsOnOffTextView" />
 
     <View
         android:id="@+id/divider4"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/dev_divider_height_dim"
+        android:layout_marginTop="@dimen/comp_to_view_margin"
         android:background="@color/letters_gray"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/registerLogsDescriptionTextView"
-        android:layout_marginTop="5dp"/>
-
+        app:layout_constraintTop_toBottomOf="@id/registerLogsDescriptionTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

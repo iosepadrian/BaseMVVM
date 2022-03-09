@@ -1,25 +1,19 @@
 package com.zynksoftware.base.developeroptions
 
 import android.content.Context
-import android.os.Build
-import androidx.annotation.RequiresApi
-import com.zynksoftware.base.R
 import java.io.File
 import java.io.InterruptedIOException
 import java.util.concurrent.atomic.AtomicBoolean
 
-class LogProvider(private val context: Context) : Runnable{
-
+class LogProvider(private val context: Context) : Runnable {
 
     private var worker: Thread? = null
     private val running = AtomicBoolean(false)
     private val stopped = AtomicBoolean(true)
-    private val defaultFileName = context.getString(R.string.baseLogFileName)
-    private val p=Runtime.getRuntime().exec("logcat")
-
-    /*fun ControlSubThread(sleepInterval: Int) {
-        interval = sleepInterval
-    }*/
+    private val defaultFileName = "logfile"
+    private val dirName = "logfiles"
+    private val p = Runtime.getRuntime().exec("logcat")
+    private val maxLinesPerFile = 500
 
     fun start() {
         worker = Thread(this)
@@ -27,10 +21,6 @@ class LogProvider(private val context: Context) : Runnable{
         worker!!.start()
     }
 
-    /*fun stop() {
-        running.set(false)
-    }*/
-    @RequiresApi(Build.VERSION_CODES.O)
     fun interrupt() {
         running.set(false)
         worker!!.interrupt()
@@ -40,16 +30,11 @@ class LogProvider(private val context: Context) : Runnable{
         return running.get()
     }
 
-    /*fun isStopped(): Boolean {
-        return stopped.get()
-    }*/
-
     override fun run() {
         stopped.set(false)
         while (running.get()) {
             try {
-                val dirPath = context.filesDir.absolutePath + File.separator.toString() + context.getString(
-                    R.string.baseLogDirName)
+                val dirPath = context.filesDir.absolutePath + File.separator.toString() + dirName
                 val projDir = File(dirPath)
                 if (!projDir.exists()) projDir.mkdirs()
                 var linecount = 0
@@ -57,10 +42,10 @@ class LogProvider(private val context: Context) : Runnable{
                     .inputStream
                     .bufferedReader()
                     .useLines { lines ->
-                            lines.forEach { line ->
-                                if (isRunning()) {
+                        lines.forEach { line ->
+                            if (isRunning()) {
                                 val fileName =
-                                    defaultFileName + (linecount / 500).toString() + ".txt"
+                                    defaultFileName + (linecount / maxLinesPerFile).toString() + ".txt"
                                 val file = File(projDir, fileName)
                                 file.appendText(line + "\n")
                                 linecount++
@@ -69,14 +54,10 @@ class LogProvider(private val context: Context) : Runnable{
                     }
             } catch (e: InterruptedException) {
                 Thread.currentThread().interrupt()
-            } catch (e:InterruptedIOException){
+            } catch (e: InterruptedIOException) {
                 Thread.currentThread().interrupt()
             }
-            // do something
         }
         stopped.set(true)
     }
-
-
-
 }

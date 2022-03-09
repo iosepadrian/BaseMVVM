@@ -16,4 +16,13 @@
 
     <dimen name="padding_mini">12dp</dimen>
     <dimen name="margin_normal">16dp</dimen>
+
+    <!--    Dev Page-->
+    <dimen name="dev_small_letter">13sp</dimen>
+    <dimen name="dev_medium_letter">15sp</dimen>
+    <dimen name="dev_big_letter">17sp</dimen>
+    <dimen name="dev_base_margin">20dp</dimen>
+    <dimen name="dev_divider_height_dim">1dp</dimen>
+    <dimen name="view_to_comp_margin">10dp</dimen>
+    <dimen name="comp_to_view_margin">5dp</dimen>
 </resources>

@@ -21,17 +21,12 @@
     <string name="host">Host:&#160;</string>
     <string name="fingerprint">Fingerprint:&#160;</string>
     <string name="version_code">Version code:&#160;</string>
-    <string name="new_line">\n</string>
     <string name="ldpi">LDPI</string>
     <string name="mdpi">MDPI</string>
     <string name="hdpi">HDPI</string>
     <string name="xhdpi">XHDPI</string>
     <string name="xxhdpi">XXHDPI</string>
     <string name="xxxhdpi">XXXHDPI</string>
-    <string name="logSwitchSP">logSwitch</string>
-    <string name="screenSwitchSP">screenSwitch</string>
-    <string name="baseLogDirName">logfiles</string>
-    <string name="baseLogFileName">logfile</string>
     <string name="logs_enabled">Logs registering enabled</string>
     <string name="logs_disabled">Logs registering disabled</string>
     <string name="screen_on_enabled">Keep screen on enabled</string>
