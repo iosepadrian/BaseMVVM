@@ -10,10 +10,13 @@ class LogProvider(private val context: Context) : Runnable {
     private var worker: Thread? = null
     private val running = AtomicBoolean(false)
     private val stopped = AtomicBoolean(true)
-    private val defaultFileName = "logfile"
-    private val dirName = "logfiles"
     private val p = Runtime.getRuntime().exec("logcat")
-    private val maxLinesPerFile = 500
+
+    companion object{
+        private const val DEFAULT_FILE_NAME = "logfile"
+        private const val DEFAULT_DIR_NAME = "logfiles"
+        private const val MAX_LINES_PER_FILE = 500
+    }
 
     fun start() {
         worker = Thread(this)
@@ -34,9 +37,11 @@ class LogProvider(private val context: Context) : Runnable {
         stopped.set(false)
         while (running.get()) {
             try {
-                val dirPath = context.filesDir.absolutePath + File.separator.toString() + dirName
+                val dirPath = context.filesDir.absolutePath + File.separator.toString() + DEFAULT_DIR_NAME
                 val projDir = File(dirPath)
-                if (!projDir.exists()) projDir.mkdirs()
+                if (!projDir.exists()) {
+                    projDir.mkdirs()
+                }
                 var linecount = 0
                 p
                     .inputStream
@@ -45,7 +50,7 @@ class LogProvider(private val context: Context) : Runnable {
                         lines.forEach { line ->
                             if (isRunning()) {
                                 val fileName =
-                                    defaultFileName + (linecount / maxLinesPerFile).toString() + ".txt"
+                                    DEFAULT_FILE_NAME + (linecount / MAX_LINES_PER_FILE).toString() + ".txt"
                                 val file = File(projDir, fileName)
                                 file.appendText(line + "\n")
                                 linecount++
