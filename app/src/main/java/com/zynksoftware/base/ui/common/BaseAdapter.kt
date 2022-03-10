@@ -16,7 +16,9 @@ abstract class BaseAdapter<T, VB: ViewBinding>(
     abstract fun VB.onBind(item: T, context: Context)
 
     private var listOfItems: MutableList<T> by Delegates.observable(list) { prop, oldList, newList ->
-        autoNotify(oldList, newList) { o, n -> o == n }
+        autoNotify(oldList, newList) { oldItem, newItem ->
+            oldItem == newItem
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<T, VB> {
