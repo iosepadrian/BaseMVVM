@@ -2,6 +2,7 @@ package com.zynksoftware.base.developeroptions
 
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.Button
 import androidx.appcompat.widget.SwitchCompat
 import com.zynksoftware.base.R
 import com.zynksoftware.base.databinding.ActivityDeveloperBinding
@@ -24,6 +25,18 @@ class DeveloperActivity :
         val switch = binding.keepScreenOnOffSwitch
         initKeepScreenOnOffSwitch(switch)
         initLogsOnOffSwitch(binding.logsOnOffSwitch)
+        val exportButton = binding.exportButton
+        initExportButton(exportButton)
+    }
+
+    private fun initExportButton(exportButton: Button) {
+        exportButton.setOnClickListener {
+            try {
+                developerViewModel.sendEmail(this)
+            } catch (t: Throwable) {
+                showToast(getString(R.string.request_toast)+t.toString())
+            }
+        }
     }
 
     private fun initLogsOnOffSwitch(switch: SwitchCompat) {

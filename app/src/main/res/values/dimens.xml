@@ -25,4 +25,7 @@
     <dimen name="dev_divider_height_dim">1dp</dimen>
     <dimen name="view_to_comp_margin">10dp</dimen>
     <dimen name="comp_to_view_margin">5dp</dimen>
+    <dimen name="dev_button_height">77dp</dimen>
+    <dimen name="dev_button_width">37dp</dimen>
+    <dimen name="dev_button_text_size">11sp</dimen>
 </resources>

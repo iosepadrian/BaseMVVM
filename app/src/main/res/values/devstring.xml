@@ -32,4 +32,11 @@
     <string name="screen_on_enabled">Keep screen on enabled</string>
     <string name="screen_on_disabled">Keep screen on disabled</string>
     <string name="build_config">Build Config</string>
+    <string name="export_logs">Export logs</string>
+    <string name="export_logs_text">Export registered log files via email</string>
+    <string name="export">Export</string>
+    <string name="subject_content">Debugging log files</string>
+    <string name="message_content">Here you have attached the registered log files</string>
+    <string name="sending_email">Sending email…</string>
+    <string name="request_toast">Request failed try again:&#160;</string>
 </resources>

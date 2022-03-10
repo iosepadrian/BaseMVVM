@@ -1,6 +1,8 @@
 package com.zynksoftware.base.developeroptions
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.util.DisplayMetrics
 import com.zynksoftware.base.BuildConfig
@@ -74,5 +76,25 @@ class DeveloperViewModel(
                 stringResourceProvider.getString(R.string.host) + Build.HOST.toString() + "\n" +
                 stringResourceProvider.getString(R.string.fingerprint) + Build.FINGERPRINT.toString() + "\n" +
                 stringResourceProvider.getString(R.string.version_code) + Build.VERSION.RELEASE.toString()
+    }
+
+    fun sendEmail(context: Context) {
+        val email = ""
+        val subject = stringResourceProvider.getString(R.string.subject_content)
+        val message = stringResourceProvider.getString(R.string.message_content)
+        val emailIntent = Intent(Intent.ACTION_SEND_MULTIPLE)
+        emailIntent.type = "plain/text"
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(email))
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject)
+        emailIntent.putParcelableArrayListExtra(
+            Intent.EXTRA_STREAM, DeveloperUtils.getUrisOfLogFiles(context)
+        )
+        emailIntent.putExtra(Intent.EXTRA_TEXT, message)
+        context.startActivity(
+            Intent.createChooser(
+                emailIntent,
+                stringResourceProvider.getString(R.string.sending_email)
+            )
+        )
     }
 }

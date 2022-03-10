@@ -2,10 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.zynksoftware.base">
-    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"--> />
-    <uses-permission android:name="android.permission.READ_LOGS"
+    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
         tools:ignore="ProtectedPermissions"
         tools:node="remove" />
+    <uses-permission android:name="android.permission.INTERNET" tools:node="remove"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" tools:node="remove"/>
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" tools:node="remove"/>
 
     <application
         android:name=".BaseApplication"
@@ -17,23 +22,35 @@
         android:theme="@style/Theme.BaseMVVM">
         <activity
             android:name=".ui.MainActivity"
-            android:theme="@style/ActivityTheme"
-            android:exported="true">
-            <!--<intent-filter>
+            android:exported="true"
+            android:theme="@style/ActivityTheme">
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".developeroptions.DeveloperActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

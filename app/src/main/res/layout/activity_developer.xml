@@ -163,4 +163,53 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/registerLogsDescriptionTextView" />
 
+    <TextView
+        android:id="@+id/exportLogsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:layout_marginTop="@dimen/view_to_comp_margin"
+        android:text="@string/export_logs"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dev_big_letter"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider4" />
+
+    <TextView
+        android:id="@+id/exportLogsDescriptiontextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:text="@string/export_logs_text"
+        android:textColor="@color/letters_gray"
+        android:textSize="@dimen/dev_medium_letter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exportLogsTextView" />
+
+    <Button
+        android:id="@+id/exportButton"
+        android:layout_width="@dimen/dev_button_height"
+        android:layout_height="@dimen/dev_button_width"
+        android:layout_marginEnd="@dimen/dev_base_margin"
+        android:background="@drawable/export_button"
+        android:text="@string/export"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dev_button_text_size"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@id/divider5"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/divider4" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dev_divider_height_dim"
+        android:layout_marginTop="@dimen/comp_to_view_margin"
+        android:background="@color/letters_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exportLogsDescriptiontextView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

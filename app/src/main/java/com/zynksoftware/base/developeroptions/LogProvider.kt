@@ -12,9 +12,9 @@ class LogProvider(private val context: Context) : Runnable {
     private val stopped = AtomicBoolean(true)
     private val p = Runtime.getRuntime().exec("logcat")
 
-    companion object{
+    companion object {
         private const val DEFAULT_FILE_NAME = "logfile"
-        private const val MAX_LINES_PER_FILE = 500
+        private const val MAX_LINES_PER_FILE = 2000
     }
 
     fun start() {
@@ -36,7 +36,8 @@ class LogProvider(private val context: Context) : Runnable {
         stopped.set(false)
         while (running.get()) {
             try {
-                val dirPath = context.filesDir.absolutePath + File.separator.toString() + DeveloperUtils.DEFAULT_DIR_NAME
+                val dirPath =
+                    context.filesDir.absolutePath + File.separator.toString() + DeveloperUtils.DEFAULT_DIR_NAME
                 val projDir = File(dirPath)
                 if (!projDir.exists()) {
                     projDir.mkdirs()
