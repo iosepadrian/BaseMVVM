@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zynksoftware.base">
 
+    <!-- once a permission is added in manifest, it will remain in build even if you remove that line/permission. -->
+    <!-- to remove a permission use tools:node="remove" -->
+
     <application
         android:name=".BaseApplication"
         android:allowBackup="false"

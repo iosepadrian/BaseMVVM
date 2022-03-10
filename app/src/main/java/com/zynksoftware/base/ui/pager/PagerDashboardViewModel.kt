@@ -9,7 +9,7 @@ class PagerDashboardViewModel: BaseViewModel() {
 
     init {
         if (tabPositionLiveData.value == null) {
-            tabPositionLiveData.setValue(1)
+            tabPositionLiveData.setValue(0)
         }
     }
 }

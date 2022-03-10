@@ -45,7 +45,7 @@ abstract class BaseActivity<B : ViewBinding> (private val viewBinder: (LayoutInf
 
     private val networkConnection = NetworkConnection
 
-    private val networkCallback = object: NetworkCallback(networkConnection) {
+    private val networkCallback = object : NetworkCallback(networkConnection) {
         override fun onAvailable(network: Network) {
             super.onAvailable(network)
             runOnUiThread {
@@ -84,7 +84,7 @@ abstract class BaseActivity<B : ViewBinding> (private val viewBinder: (LayoutInf
     override fun onResume() {
         super.onResume()
         Handler(Looper.getMainLooper()).postDelayed({
-            if(!isDestroyed && !isFinishing) {
+            if (!isDestroyed && !isFinishing) {
                 //TODO
                 if (networkConnection.isConnected) {
 //                    findViewById<SnackbarNoInternetComponent>(R.id.snackbarNoInternetComponent)?.hide()
