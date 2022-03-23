@@ -1,8 +1,6 @@
 package com.zynksoftware.base.ui.pager
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zynksoftware.base.databinding.FragmentDemo1Binding
 import com.zynksoftware.base.models.DemoModel
@@ -32,25 +30,5 @@ class Fragment1: BaseFragment<FragmentDemo1Binding>(FragmentDemo1Binding::inflat
 
         val adapter = DemoAdapter(list)
         recyclerView.adapter = adapter
-
-        Handler(Looper.getMainLooper()).postDelayed({
-            adapter.updateList(mutableListOf(
-                DemoModel("test 1"),
-                DemoModel("test 2"),
-                DemoModel("test 4"),
-                DemoModel("test 5"),
-                DemoModel("test 6")
-            ))
-        }, 2000)
-
-        Handler(Looper.getMainLooper()).postDelayed({
-            adapter.updateList(mutableListOf(
-                DemoModel("test 1"),
-                DemoModel("test 2"),
-                DemoModel("test 4"),
-                DemoModel("test 10"),
-                DemoModel("test 11")
-            ))
-        }, 4000)
     }
 }

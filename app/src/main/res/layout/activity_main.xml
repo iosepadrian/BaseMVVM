@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_centerInParent="true"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/nag_graph"/>
+        app:navGraph="@navigation/nav_graph"/>
 
 
     <com.zynksoftware.base.ui.components.LoadingComponent
