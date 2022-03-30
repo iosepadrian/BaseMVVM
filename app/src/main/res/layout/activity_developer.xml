@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_gray"
+    tools:context=".developeroptions.DeveloperActivity">
+
+    <TextView
+        android:id="@+id/buildConfigTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:layout_marginTop="@dimen/dev_base_margin"
+        android:text="@string/build_config"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dev_big_letter"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/versionNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:layout_marginTop="@dimen/comp_to_view_margin"
+        android:textColor="@color/letters_gray"
+        android:textSize="@dimen/dev_small_letter"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buildConfigTextView" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dev_divider_height_dim"
+        android:layout_marginTop="5dp"
+        android:background="@color/letters_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/versionNameTextView" />
+
+    <TextView
+        android:id="@+id/deviceDetailsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:layout_marginTop="@dimen/view_to_comp_margin"
+        android:text="@string/device_details"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dev_big_letter"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+    <TextView
+        android:id="@+id/deviceDetailsValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:textColor="@color/letters_gray"
+        android:textSize="@dimen/dev_small_letter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deviceDetailsTextView" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dev_divider_height_dim"
+        android:layout_marginTop="@dimen/comp_to_view_margin"
+        android:background="@color/letters_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deviceDetailsValueTextView" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/keepScreenOnOffSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dev_base_margin"
+        app:layout_constraintBottom_toBottomOf="@id/divider3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/divider2" />
+
+    <TextView
+        android:id="@+id/keepScreenOnTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:layout_marginTop="@dimen/comp_to_view_margin"
+        android:text="@string/keep_screen_on_off"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dev_big_letter"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+    <TextView
+        android:id="@+id/keepScreenOnDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:maxWidth="250dp"
+        android:text="@string/keep_screen_on_off_text"
+        android:textColor="@color/letters_gray"
+        android:textSize="@dimen/dev_medium_letter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/keepScreenOnTextView" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dev_divider_height_dim"
+        android:layout_marginTop="@dimen/view_to_comp_margin"
+        android:background="@color/letters_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/keepScreenOnDescriptionTextView" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/logsOnOffSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dev_base_margin"
+        app:layout_constraintBottom_toBottomOf="@id/divider4"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/divider3" />
+
+    <TextView
+        android:id="@+id/registerlogsOnOffTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:layout_marginTop="@dimen/view_to_comp_margin"
+        android:text="@string/logs_on_off"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dev_big_letter"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+    <TextView
+        android:id="@+id/registerLogsDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:maxWidth="250dp"
+        android:text="@string/logs_on_off_text"
+        android:textColor="@color/letters_gray"
+        android:textSize="@dimen/dev_medium_letter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/registerlogsOnOffTextView" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dev_divider_height_dim"
+        android:layout_marginTop="@dimen/comp_to_view_margin"
+        android:background="@color/letters_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/registerLogsDescriptionTextView" />
+
+    <TextView
+        android:id="@+id/exportLogsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:layout_marginTop="@dimen/view_to_comp_margin"
+        android:text="@string/export_logs"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dev_big_letter"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider4" />
+
+    <TextView
+        android:id="@+id/exportLogsDescriptiontextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dev_base_margin"
+        android:text="@string/export_logs_text"
+        android:textColor="@color/letters_gray"
+        android:textSize="@dimen/dev_medium_letter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exportLogsTextView" />
+
+    <Button
+        android:id="@+id/exportButton"
+        android:layout_width="@dimen/dev_button_height"
+        android:layout_height="@dimen/dev_button_width"
+        android:layout_marginEnd="@dimen/dev_base_margin"
+        android:background="@drawable/export_button"
+        android:text="@string/export"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dev_button_text_size"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@id/divider5"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/divider4" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dev_divider_height_dim"
+        android:layout_marginTop="@dimen/comp_to_view_margin"
+        android:background="@color/letters_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exportLogsDescriptiontextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
