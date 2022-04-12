@@ -24,7 +24,7 @@ class PagerDashboardFragment :
             }
         })
 
-        viewLifecycleOwner.observe(pagerDashboardViewModel.tabPositionLiveData) {
+        observe(pagerDashboardViewModel.tabPositionLiveData){
 
         }
 
