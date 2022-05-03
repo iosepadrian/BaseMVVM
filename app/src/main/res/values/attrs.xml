@@ -17,4 +17,9 @@
     <declare-styleable name="BaseToolbar">
         <attr name="backButtonVisibility"/>
     </declare-styleable>
+
+    <declare-styleable name="ButtonComponent">
+        <attr name="android:textColor"/>
+        <attr name="android:text"/>
+    </declare-styleable>
 </resources>

@@ -10,7 +10,6 @@
         tools:node="remove" />
     <uses-permission android:name="android.permission.INTERNET" tools:node="remove"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" tools:node="remove"/>
-    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" tools:node="remove"/>
 
     <!-- once a permission is added in manifest, it will remain in build even if you remove that line/permission. -->
     <!-- to remove a permission use tools:node="remove" -->

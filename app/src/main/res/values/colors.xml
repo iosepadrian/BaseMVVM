@@ -10,7 +10,15 @@
     <color name="dark_gray">#1a1a1a</color>
     <color name="letters_gray">#878787</color>
     <color name="loading_background">#80181818</color>
+    <color name="button_component_text">#80281818</color>
 
     <color name="bottom_navigation_color">#252233</color>
+
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="light_blue_400">#FF29B6F6</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="gray_400">#FFBDBDBD</color>
+    <color name="gray_600">#FF757575</color>
 
 </resources>
