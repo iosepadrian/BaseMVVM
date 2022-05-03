@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Base MVVM</string>
     <string name="back">back</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="demo_button">Demo Button</string>
+    <string name="press_to_open_dialog_fragment">Press to open dialog fragment</string>
+    <string name="demo_fragment">This is the demo fragment</string>
+    <string name="fragmet_2">FRAGMENT 2</string>
 </resources>
