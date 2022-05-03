@@ -19,9 +19,12 @@ class ButtonComponent @JvmOverloads constructor(
         val typedArray =
             context.obtainStyledAttributes(attrs, R.styleable.ButtonComponent, defStyleAttr, 0)
 
-        val color = typedArray.getColor(R.styleable.ButtonComponent_android_textColor, ContextCompat.getColor(context, R.color.button_component_text))
+        val color = typedArray.getColor(
+            R.styleable.ButtonComponent_android_textColor,
+            ContextCompat.getColor(context, R.color.button_component_text)
+        )
         binding.customButtonTextView.setTextColor(color)
-        val text= typedArray.getString(R.styleable.ButtonComponent_android_text)
+        val text = typedArray.getString(R.styleable.ButtonComponent_android_text)
         binding.customButtonTextView.text = text
         typedArray.recycle()
     }
