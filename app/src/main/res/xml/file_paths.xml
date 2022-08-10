@@ -3,5 +3,22 @@
     <external-path
         name="external_files"
         path="." />
-    <files-path name="my_logs" path="logfiles/"/>
+    <files-path
+        name="my_logs"
+        path="logfiles/" />
+    <files-path
+        name="files"
+        path="." />
+    <external-files-path
+        name="external_files"
+        path="." />
+    <cache-path
+        name="cached_files"
+        path="." />
+    <external-cache-path
+        name="cached_files"
+        path="." />
+    <root-path
+        name="root"
+        path="." />
 </paths>

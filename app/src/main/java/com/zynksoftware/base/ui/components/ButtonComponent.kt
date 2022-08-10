@@ -3,10 +3,12 @@ package com.zynksoftware.base.ui.components
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.zynksoftware.base.R
 import com.zynksoftware.base.databinding.ComponentButtonBinding
+
 
 class ButtonComponent @JvmOverloads constructor(
     context: Context,
@@ -27,5 +29,11 @@ class ButtonComponent @JvmOverloads constructor(
         val text = typedArray.getString(R.styleable.ButtonComponent_android_text)
         binding.customButtonTextView.text = text
         typedArray.recycle()
+    }
+
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        return if (event.action == MotionEvent.ACTION_UP) {
+            performClick()
+        } else true
     }
 }

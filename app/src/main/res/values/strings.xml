@@ -8,4 +8,10 @@
     <string name="demo_fragment">This is the demo fragment</string>
     <string name="fragmet_2">FRAGMENT 2</string>
     <string name="view_coroutine_scope">VIEW_COROUTINE_SCOPE_TAG</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="file_not_selected">File not selected</string>
+    <string name="file_not_supported">File not supported</string>
+    <string name="upload_photo">Upload photo</string>
 </resources>
