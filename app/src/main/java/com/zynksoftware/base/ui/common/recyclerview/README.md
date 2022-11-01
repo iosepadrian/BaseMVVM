@@ -106,7 +106,7 @@ This is an infinite list with loading/error state
             
             private val modificationEvents = MutableStateFlow<List<PagingEvent<DemoModel>>>(emptyList())
 
-    - get list will use `createPager`, `combineForEvent` where you will have list with events and delete/edit blocks to find the element (based on id most of the time)
+    - get list will use `createPager`, `combineForEvent` where you will have list with events and delete/edit blocks to find the element (based on id most of the time). createPager can have multiple parameters like pageSize, and prefetchDistance
             
             fun getDemoList() {
                 viewModelScope.launch {
