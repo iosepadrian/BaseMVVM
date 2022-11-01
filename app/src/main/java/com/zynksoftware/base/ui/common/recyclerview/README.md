@@ -5,7 +5,7 @@ This example will include SwipeToRefreshLayout, Simple Adapter, Paginated Adapte
 
 ### Let's start with Simple Adapter:
 
-![Simple RecyclerView](simpleRecyclerView.gif)
+<img src="simpleRecyclerView.gif" width="40%" />
 
 - **Adapter** that extend [`BaseAdater`](BaseAdapter.kt) with Model, Binding and Comparator, then you will need to override onBind
 
@@ -50,7 +50,7 @@ This example will include SwipeToRefreshLayout, Simple Adapter, Paginated Adapte
 ### Complex Adapter
 This is an infinite list with loading/error state
 
-![Complex RecyclerView](complexRecyclerView.gif)
+<img src="complexRecyclerView.gif" width="40%" />
 
 - **Adapter** that extends [`PagingBaseAdapter`](PagingBaseAdapter.kt):
 
