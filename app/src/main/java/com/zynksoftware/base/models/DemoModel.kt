@@ -1,5 +1,6 @@
 package com.zynksoftware.base.models
 
 data class DemoModel(
-    val title: String
+    var id: String,
+    var title: String
 )

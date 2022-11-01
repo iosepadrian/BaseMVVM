@@ -1,11 +1,15 @@
 package com.zynksoftware.base.developeroptions
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Button
 import androidx.appcompat.widget.SwitchCompat
 import com.zynksoftware.base.R
 import com.zynksoftware.base.databinding.ActivityDeveloperBinding
+import com.zynksoftware.base.developeroptions.recyclerview.PagingActivity
+import com.zynksoftware.base.developeroptions.recyclerview.SimpleRecyclerViewActivity
 import com.zynksoftware.base.ui.common.BaseActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.component.inject
@@ -14,6 +18,13 @@ class DeveloperActivity :
     BaseActivity<ActivityDeveloperBinding>(ActivityDeveloperBinding::inflate) {
     private val logProvider: LogProvider by inject()
     private val developerViewModel: DeveloperViewModel by viewModel()
+
+    companion object {
+        fun start(context: Context) {
+            val intent = Intent(context, DeveloperActivity::class.java)
+            context.startActivity(intent)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +38,13 @@ class DeveloperActivity :
         initLogsOnOffSwitch(binding.logsOnOffSwitch)
         val exportButton = binding.exportButton
         initExportButton(exportButton)
+
+        binding.pagingTextView.setOnClickListener {
+            PagingActivity.start(this)
+        }
+        binding.simpleRecyclerViewTextView.setOnClickListener {
+            SimpleRecyclerViewActivity.start(this)
+        }
     }
 
     private fun initExportButton(exportButton: Button) {
