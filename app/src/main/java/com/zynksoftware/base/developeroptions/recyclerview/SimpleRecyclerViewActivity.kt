@@ -1,0 +1,45 @@
+package com.zynksoftware.base.developeroptions.recyclerview
+
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.zynksoftware.base.databinding.ActivitySimpleRecyclerViewBinding
+import com.zynksoftware.base.developeroptions.recyclerview.adapters.DemoAdapter
+import com.zynksoftware.base.extensions.observe
+import com.zynksoftware.base.ui.common.BaseActivity
+import org.koin.androidx.viewmodel.ext.android.viewModel
+
+class SimpleRecyclerViewActivity: BaseActivity<ActivitySimpleRecyclerViewBinding>(ActivitySimpleRecyclerViewBinding::inflate) {
+    override fun getViewIdToFindNavController(): Int = -1
+
+    private val viewModel: SimpleRecyclerViewViewModel by viewModel()
+
+    companion object {
+        fun start (context: Context) {
+            val intent = Intent(context, SimpleRecyclerViewActivity::class.java)
+            context.startActivity(intent)
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+        val demoAdapter = DemoAdapter(itemClick = {
+            showToast("${it.title}")
+        })
+
+        observe(viewModel.listLiveData) {
+            demoAdapter.submitList(it)
+            binding.simpleRecyclerView.isRefreshing = false
+        }
+
+        binding.simpleRecyclerView.setLayoutManager(LinearLayoutManager(this))
+        binding.simpleRecyclerView.setAdapter(demoAdapter, swipeRefreshListener = {
+            viewModel.getList(isFromRefresh = true)
+        })
+
+        viewModel.getList()
+    }
+}

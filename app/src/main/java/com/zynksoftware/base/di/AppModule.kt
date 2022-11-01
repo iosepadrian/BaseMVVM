@@ -7,7 +7,10 @@ import androidx.security.crypto.MasterKeys
 import com.zynksoftware.base.developeroptions.DeveloperSessionManager
 import com.zynksoftware.base.developeroptions.DeveloperViewModel
 import com.zynksoftware.base.developeroptions.LogProvider
+import com.zynksoftware.base.developeroptions.recyclerview.PagingViewModel
+import com.zynksoftware.base.developeroptions.recyclerview.SimpleRecyclerViewViewModel
 import com.zynksoftware.base.ui.common.SharedViewModel
+import com.zynksoftware.base.ui.pager.Fragment1ViewModel
 import com.zynksoftware.base.ui.pager.PagerDashboardViewModel
 import com.zynksoftware.base.utils.StringResourceProvider
 import okhttp3.OkHttpClient
@@ -21,6 +24,9 @@ val viewModelModule = module {
     viewModel { SharedViewModel() }
     viewModel { DeveloperViewModel(get(), get()) }
     viewModel { PagerDashboardViewModel() }
+    viewModel { Fragment1ViewModel() }
+    viewModel { PagingViewModel() }
+    viewModel { SimpleRecyclerViewViewModel() }
 }
 
 val repositoryModule = module {
