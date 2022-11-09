@@ -10,6 +10,7 @@
     <string name="view_coroutine_scope">VIEW_COROUTINE_SCOPE_TAG</string>
     <string name="camera">Camera</string>
     <string name="gallery">Gallery</string>
+    <string name="no_network_available">No network available</string>
     <string name="something_went_wrong">Something went wrong</string>
     <string name="file_not_selected">File not selected</string>
     <string name="file_not_supported">File not supported</string>

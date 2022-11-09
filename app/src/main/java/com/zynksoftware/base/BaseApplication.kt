@@ -5,6 +5,7 @@ import android.content.Context
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.gson.GsonBuilder
 import com.zynksoftware.base.di.repositoryModule
+import com.zynksoftware.base.di.useCaseModule
 import com.zynksoftware.base.di.utilsModule
 import com.zynksoftware.base.di.viewModelModule
 import kotlinx.coroutines.GlobalScope
@@ -35,7 +36,8 @@ class BaseApplication : Application() {
                 listOf(
                     repositoryModule,
                     utilsModule,
-                    viewModelModule
+                    viewModelModule,
+                    useCaseModule
                 )
             )
         }
@@ -47,8 +49,7 @@ class BaseApplication : Application() {
     }
 
     private fun initCrashlytics() {
-        //TODO
-//        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(!BuildConfig.DEBUG)
+        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(!BuildConfig.DEBUG)
     }
 
     private fun initStoro(){
