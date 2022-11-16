@@ -17,11 +17,11 @@ import com.zynksoftware.base.network.RemoteServicesHandler
 import com.zynksoftware.base.network.interceptors.AuthorizationInterceptor
 import com.zynksoftware.base.network.services.ServiceProvider
 import com.zynksoftware.base.network.interceptors.NetworkNotAvailableInterceptor
-import com.zynksoftware.base.repository.CoinsRepository
+import com.zynksoftware.base.repository.LoginRepository
 import com.zynksoftware.base.ui.common.SharedViewModel
 import com.zynksoftware.base.ui.pager.Fragment1ViewModel
 import com.zynksoftware.base.ui.pager.PagerDashboardViewModel
-import com.zynksoftware.base.usecase.GetCoinsUseCase
+import com.zynksoftware.base.usecase.LoginUseCase
 import com.zynksoftware.base.utils.StringResourceProvider
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
@@ -36,14 +36,14 @@ val viewModelModule = module {
     viewModel { PagerDashboardViewModel() }
     viewModel { Fragment1ViewModel() }
     viewModel { PagingViewModel() }
-    viewModel { SimpleRecyclerViewViewModel(get()) }
+    viewModel { SimpleRecyclerViewViewModel() }
 }
 
 val repositoryModule = module {
 
     single { provideSharedPreferences(androidContext()) }
     single { DeveloperSessionManager(get()) }
-    single { CoinsRepository(get(), get()) }
+    single { LoginRepository(get(), get()) }
 //    single { SessionManager(get()) }
 //    single { CacheManager(get(), get()) }
 }
@@ -63,7 +63,7 @@ val utilsModule = module {
 }
 
 val useCaseModule = module {
-    single { GetCoinsUseCase(get()) }
+    single { LoginUseCase(get(), get()) }
 }
 
 fun provideRefreshTokenAuthenticator() = RefreshTokenAuthenticator()

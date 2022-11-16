@@ -24,7 +24,7 @@ class BaseApplication : Application() {
 
         initKoin()
         initInterceptor()
-        initCrashlytics()
+        //initCrashlytics()
         initStoro()
     }
 

@@ -19,7 +19,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField 'String', 'SERVER_URL', '"https://api.coingecko.com/"'
+        buildConfigField 'String', 'SERVER_URL', '"http://192.168.199.218:8080/"'
 
         buildConfigField 'String', 'CREDENTIALS_USERNAME', '"GUILDA_CLIENT"'   //TODO - add credentials for basic auth
         buildConfigField 'String', 'CREDENTIALS_PASSWORD', '"SECRET"'  //TODO - add credentials for basic auth
