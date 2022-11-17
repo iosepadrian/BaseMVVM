@@ -27,7 +27,7 @@ class SimpleRecyclerViewActivity: BaseActivity<ActivitySimpleRecyclerViewBinding
 
 
         val demoAdapter = DemoAdapter(itemClick = {
-            showToast("${it.title}")
+            showToast(it.title)
         })
 
         observe(viewModel.listLiveData) {

@@ -1,4 +1,4 @@
-package com.zynksoftware.base.models.network
+package com.zynksoftware.base.network.common
 
 enum class Status {
     SUCCESS,
