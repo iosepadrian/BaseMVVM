@@ -6,6 +6,7 @@ import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.zynksoftware.base.AppConfig
 import com.zynksoftware.base.developeroptions.DeveloperSessionManager
 import com.zynksoftware.base.developeroptions.DeveloperViewModel
 import com.zynksoftware.base.developeroptions.LogProvider
@@ -71,7 +72,7 @@ fun provideRefreshTokenAuthenticator() = RefreshTokenAuthenticator()
 fun provideOkHttpBuilder(): OkHttpClient.Builder {
     val okHttpClientBuilder = OkHttpClient.Builder()
 
-//    AppConfig.addInterceptors(okHttpClientBuilder)
+    AppConfig.addInterceptors(okHttpClientBuilder)
 
     okHttpClientBuilder
         .addInterceptor(NetworkNotAvailableInterceptor())
