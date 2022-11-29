@@ -53,10 +53,6 @@ class TitleSubtitleValueComponent @JvmOverloads constructor(
         typedArray.recycle()
     }
 
-    fun getSwitch(): SwitchCompat {
-        return binding.switchButton
-    }
-
     fun setSubtitleText(text: String) {
         binding.subtitleTextView.text = text
     }
