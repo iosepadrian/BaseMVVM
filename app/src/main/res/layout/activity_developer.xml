@@ -19,7 +19,7 @@
             android:orientation="vertical"
             app:layout_constraintTop_toTopOf="parent">
 
-            <com.zynksoftware.base.developeroptions.components.TitleSubtitleValueComponent
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
                 android:id="@+id/buildConfig"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:titleText="@string/build_config" />
 
-            <com.zynksoftware.base.developeroptions.components.TitleSubtitleValueComponent
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
                 android:id="@+id/deviceDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:titleText="@string/device_details" />
 
-            <com.zynksoftware.base.developeroptions.components.TitleSubtitleValueComponent
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
                 android:id="@+id/keepScreenOn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:titleText="@string/keep_screen_on_off" />
 
-            <com.zynksoftware.base.developeroptions.components.TitleSubtitleValueComponent
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
                 android:id="@+id/logsOnOff"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:titleText="@string/logs_on_off" />
 
-            <com.zynksoftware.base.developeroptions.components.TitleSubtitleValueComponent
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
                 android:id="@+id/exportLogs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:titleText="@string/export_logs" />
 
-            <com.zynksoftware.base.developeroptions.components.TitleSubtitleValueComponent
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
                 android:id="@+id/pagingRecycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -85,7 +85,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:titleText="Paging 3 RecyclerView" />
 
-            <com.zynksoftware.base.developeroptions.components.TitleSubtitleValueComponent
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
                 android:id="@+id/simpleRecycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

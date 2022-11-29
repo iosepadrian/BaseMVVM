@@ -6,30 +6,29 @@ import android.util.AttributeSet
 import android.util.SparseArray
 import android.view.LayoutInflater
 import android.widget.CompoundButton
-import androidx.appcompat.widget.SwitchCompat
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.zynksoftware.base.R
-import com.zynksoftware.base.databinding.ComponentTitleSubtitleValueBinding
+import com.zynksoftware.base.databinding.ComponentDeveloperButtonBinding
 
-class TitleSubtitleValueComponent @JvmOverloads constructor(
+class DeveloperButtonComponent @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
     private val binding =
-        ComponentTitleSubtitleValueBinding.inflate(LayoutInflater.from(context), this, true)
+        ComponentDeveloperButtonBinding.inflate(LayoutInflater.from(context), this, true)
 
     init {
         val typedArray =
             context.obtainStyledAttributes(
                 attrs,
-                R.styleable.TitleSubtitleValueComponent,
+                R.styleable.DeveloperButtonComponent,
                 defStyleAttr,
                 0
             )
 
         val hasSwitch =
-            typedArray.getBoolean(R.styleable.TitleSubtitleValueComponent_hasSwitch, false)
+            typedArray.getBoolean(R.styleable.DeveloperButtonComponent_hasSwitch, false)
         if (hasSwitch) {
             binding.switchButton.visibility = VISIBLE
             binding.valueTextView.visibility = GONE
@@ -39,15 +38,15 @@ class TitleSubtitleValueComponent @JvmOverloads constructor(
         }
 
         val titleText =
-            typedArray.getString(R.styleable.TitleSubtitleValueComponent_titleText) ?: ""
+            typedArray.getString(R.styleable.DeveloperButtonComponent_titleText) ?: ""
         binding.titleTextView.text = titleText
 
         val subtitleText =
-            typedArray.getString(R.styleable.TitleSubtitleValueComponent_subtitleText) ?: ""
+            typedArray.getString(R.styleable.DeveloperButtonComponent_subtitleText) ?: ""
         binding.subtitleTextView.text = subtitleText
 
         val valueText =
-            typedArray.getString(R.styleable.TitleSubtitleValueComponent_valueText) ?: ""
+            typedArray.getString(R.styleable.DeveloperButtonComponent_valueText) ?: ""
         binding.valueTextView.text = valueText
 
         typedArray.recycle()

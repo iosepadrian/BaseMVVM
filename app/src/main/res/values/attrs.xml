@@ -23,7 +23,7 @@
         <attr name="android:text"/>
     </declare-styleable>
 
-    <declare-styleable name="TitleSubtitleValueComponent">
+    <declare-styleable name="DeveloperButtonComponent">
         <attr name="titleText" format="string"/>
         <attr name="subtitleText" format="string"/>
         <attr name="valueText" format="string"/>
