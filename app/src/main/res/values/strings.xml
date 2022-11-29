@@ -16,4 +16,6 @@
     <string name="file_not_supported">File not supported</string>
     <string name="upload_photo">Upload photo</string>
     <string name="retry">Retry</string>
+    <string name="title">Title</string>
+    <string name="subtitle">Subtitle</string>
 </resources>
