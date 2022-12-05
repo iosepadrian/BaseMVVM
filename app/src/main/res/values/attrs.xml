@@ -22,4 +22,11 @@
         <attr name="android:textColor"/>
         <attr name="android:text"/>
     </declare-styleable>
+
+    <declare-styleable name="DeveloperButtonComponent">
+        <attr name="titleText" format="string"/>
+        <attr name="subtitleText" format="string"/>
+        <attr name="valueText" format="string"/>
+        <attr name="hasSwitch" format="boolean"/>
+    </declare-styleable>
 </resources>

@@ -12,254 +12,91 @@
         android:background="@color/dark_gray"
         tools:context=".developeroptions.DeveloperActivity">
 
-        <TextView
-            android:id="@+id/buildConfigTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dev_base_margin"
-            android:layout_marginTop="@dimen/dev_base_margin"
-            android:text="@string/build_config"
-            android:textColor="@color/white"
-            android:textSize="@dimen/dev_big_letter"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/versionNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dev_base_margin"
-            android:layout_marginTop="@dimen/comp_to_view_margin"
-            android:textColor="@color/letters_gray"
-            android:textSize="@dimen/dev_small_letter"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/buildConfigTextView" />
-
-        <View
-            android:id="@+id/divider1"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dev_divider_height_dim"
-            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
             android:background="@color/letters_gray"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/versionNameTextView" />
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/deviceDetailsTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dev_base_margin"
-            android:layout_marginTop="@dimen/view_to_comp_margin"
-            android:text="@string/device_details"
-            android:textColor="@color/white"
-            android:textSize="@dimen/dev_big_letter"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider1" />
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
+                android:id="@+id/buildConfig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/dark_gray"
+                app:hasSwitch="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:titleText="@string/build_config" />
 
-        <TextView
-            android:id="@+id/deviceDetailsValueTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dev_base_margin"
-            android:textColor="@color/letters_gray"
-            android:textSize="@dimen/dev_small_letter"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/deviceDetailsTextView" />
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
+                android:id="@+id/deviceDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/dark_gray"
+                app:hasSwitch="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:titleText="@string/device_details" />
 
-        <View
-            android:id="@+id/divider2"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dev_divider_height_dim"
-            android:layout_marginTop="@dimen/comp_to_view_margin"
-            android:background="@color/letters_gray"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/deviceDetailsValueTextView" />
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
+                android:id="@+id/keepScreenOn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/dark_gray"
+                app:hasSwitch="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:titleText="@string/keep_screen_on_off" />
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/keepScreenOnOffSwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/dev_base_margin"
-            app:layout_constraintBottom_toBottomOf="@id/divider3"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@id/divider2" />
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
+                android:id="@+id/logsOnOff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/dark_gray"
+                app:hasSwitch="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:titleText="@string/logs_on_off" />
 
-        <TextView
-            android:id="@+id/keepScreenOnTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dev_base_margin"
-            android:layout_marginTop="@dimen/comp_to_view_margin"
-            android:text="@string/keep_screen_on_off"
-            android:textColor="@color/white"
-            android:textSize="@dimen/dev_big_letter"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider2" />
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
+                android:id="@+id/exportLogs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/dark_gray"
+                app:hasSwitch="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:titleText="@string/export_logs" />
 
-        <TextView
-            android:id="@+id/keepScreenOnDescriptionTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dev_base_margin"
-            android:maxWidth="250dp"
-            android:text="@string/keep_screen_on_off_text"
-            android:textColor="@color/letters_gray"
-            android:textSize="@dimen/dev_medium_letter"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/keepScreenOnTextView" />
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
+                android:id="@+id/pagingRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/dark_gray"
+                app:hasSwitch="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:titleText="Paging 3 RecyclerView" />
 
-        <View
-            android:id="@+id/divider3"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dev_divider_height_dim"
-            android:layout_marginTop="@dimen/view_to_comp_margin"
-            android:background="@color/letters_gray"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/keepScreenOnDescriptionTextView" />
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
+                android:id="@+id/simpleRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/dark_gray"
+                app:hasSwitch="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:titleText="Simple RecyclerView" />
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/logsOnOffSwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/dev_base_margin"
-            app:layout_constraintBottom_toBottomOf="@id/divider4"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@id/divider3" />
-
-        <TextView
-            android:id="@+id/registerlogsOnOffTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dev_base_margin"
-            android:layout_marginTop="@dimen/view_to_comp_margin"
-            android:text="@string/logs_on_off"
-            android:textColor="@color/white"
-            android:textSize="@dimen/dev_big_letter"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider3" />
-
-        <TextView
-            android:id="@+id/registerLogsDescriptionTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dev_base_margin"
-            android:maxWidth="250dp"
-            android:text="@string/logs_on_off_text"
-            android:textColor="@color/letters_gray"
-            android:textSize="@dimen/dev_medium_letter"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/registerlogsOnOffTextView" />
-
-        <View
-            android:id="@+id/divider4"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dev_divider_height_dim"
-            android:layout_marginTop="@dimen/comp_to_view_margin"
-            android:background="@color/letters_gray"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/registerLogsDescriptionTextView" />
-
-        <TextView
-            android:id="@+id/exportLogsTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dev_base_margin"
-            android:layout_marginTop="@dimen/view_to_comp_margin"
-            android:text="@string/export_logs"
-            android:textColor="@color/white"
-            android:textSize="@dimen/dev_big_letter"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider4" />
-
-        <TextView
-            android:id="@+id/exportLogsDescriptiontextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dev_base_margin"
-            android:text="@string/export_logs_text"
-            android:textColor="@color/letters_gray"
-            android:textSize="@dimen/dev_medium_letter"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/exportLogsTextView" />
-
-        <Button
-            android:id="@+id/exportButton"
-            android:layout_width="@dimen/dev_button_height"
-            android:layout_height="@dimen/dev_button_width"
-            android:layout_marginEnd="@dimen/dev_base_margin"
-            android:background="@drawable/export_button"
-            android:text="@string/export"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/dev_button_text_size"
-            app:backgroundTint="@null"
-            app:layout_constraintBottom_toBottomOf="@id/divider5"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@id/divider4" />
-
-        <View
-            android:id="@+id/divider5"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dev_divider_height_dim"
-            android:layout_marginTop="@dimen/comp_to_view_margin"
-            android:background="@color/letters_gray"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/exportLogsDescriptiontextView" />
-
-        <TextView
-            android:id="@+id/pagingTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/dev_base_margin"
-            android:text="Paging 3 RecyclerView"
-            android:textColor="@color/white"
-            android:textSize="@dimen/dev_big_letter"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider5" />
-
-        <View
-            android:id="@+id/divider6"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dev_divider_height_dim"
-            android:background="@color/letters_gray"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pagingTextView" />
-
-        <TextView
-            android:id="@+id/simpleRecyclerViewTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/dev_base_margin"
-            android:text="Simple RecyclerView"
-            android:textColor="@color/white"
-            android:textSize="@dimen/dev_big_letter"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider6" />
-
-        <View
-            android:id="@+id/divider7"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dev_divider_height_dim"
-            android:background="@color/letters_gray"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/simpleRecyclerViewTextView" />
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>
