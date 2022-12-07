@@ -19,6 +19,4 @@
     <string name="lbl_move_up_or_down">Move up or down</string>
     <string name="lbl_double_tap_to_dismiss">double tap to dismiss</string>
     <string name="lbl_to">to</string>
-    <string name="title">Title</string>
-    <string name="subtitle">Subtitle</string>
 </resources>
