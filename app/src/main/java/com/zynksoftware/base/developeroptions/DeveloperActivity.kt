@@ -4,8 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
-import android.widget.Button
-import androidx.appcompat.widget.SwitchCompat
 import com.zynksoftware.base.R
 import com.zynksoftware.base.databinding.ActivityDeveloperBinding
 import com.zynksoftware.base.developeroptions.recyclerview.PagingActivity
@@ -30,40 +28,40 @@ class DeveloperActivity :
         super.onCreate(savedInstanceState)
         val versionNameString =
             getString(R.string.version_name) + developerViewModel.getAppVersion()
-        binding.versionNameTextView.text = versionNameString
-        binding.deviceDetailsValueTextView.text =
+        binding.buildConfig.setSubtitleText(versionNameString)
+        binding.deviceDetails.setSubtitleText(
             developerViewModel.getSystemDetail(resources.displayMetrics.densityDpi)
-        val switch = binding.keepScreenOnOffSwitch
-        initKeepScreenOnOffSwitch(switch)
-        initLogsOnOffSwitch(binding.logsOnOffSwitch)
-        val exportButton = binding.exportButton
-        initExportButton(exportButton)
+        )
 
-        binding.pagingTextView.setOnClickListener {
+        initKeepScreenOnOffSwitch()
+        initLogsOnOffSwitch()
+        initExportButton()
+
+        binding.pagingRecycler.setOnClickListener {
             PagingActivity.start(this)
         }
-        binding.simpleRecyclerViewTextView.setOnClickListener {
+        binding.simpleRecycler.setOnClickListener {
             SimpleRecyclerViewActivity.start(this)
         }
     }
 
-    private fun initExportButton(exportButton: Button) {
-        exportButton.setOnClickListener {
+    private fun initExportButton() {
+        binding.exportLogs.setOnClickListener {
             try {
                 developerViewModel.sendEmail(this)
             } catch (t: Throwable) {
-                showToast(getString(R.string.request_toast)+t.toString())
+                showToast(getString(R.string.request_toast) + t.toString())
             }
         }
     }
 
-    private fun initLogsOnOffSwitch(switch: SwitchCompat) {
-        switch.isChecked = developerViewModel.getLogsSwitch()
-        if (switch.isChecked) {
+    private fun initLogsOnOffSwitch() {
+        binding.logsOnOff.setSwitchState(developerViewModel.getLogsSwitch())
+        if (binding.logsOnOff.isSwitchChecked()) {
             DeveloperUtils.deleteFilesBeforeStartingLogs(applicationContext)
             logProvider.start()
         }
-        switch.setOnCheckedChangeListener { _, isChecked ->
+        binding.logsOnOff.setSwitchButtonClickListener { _, isChecked ->
             val message: String
             if (isChecked) {
                 DeveloperUtils.deleteFilesBeforeStartingLogs(applicationContext)
@@ -79,12 +77,13 @@ class DeveloperActivity :
         }
     }
 
-    private fun initKeepScreenOnOffSwitch(switch: SwitchCompat) {
-        switch.isChecked = developerViewModel.getScreenSwitch()
-        if (switch.isChecked) {
+    private fun initKeepScreenOnOffSwitch() {
+        binding.keepScreenOn.setSwitchState(developerViewModel.getScreenSwitch())
+        if (binding.keepScreenOn.isSwitchChecked()) {
             window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         }
-        switch.setOnCheckedChangeListener { _, isChecked ->
+
+        binding.keepScreenOn.setSwitchButtonClickListener { _, isChecked ->
             val message: String
             if (isChecked) {
                 window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
