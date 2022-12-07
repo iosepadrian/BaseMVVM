@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.gson.GsonBuilder
+import com.zynksoftware.base.analytics.AnalyticsUtil
 import com.zynksoftware.base.di.repositoryModule
 import com.zynksoftware.base.di.useCaseModule
 import com.zynksoftware.base.di.utilsModule
@@ -25,6 +26,7 @@ class BaseApplication : Application() {
         initKoin()
         initInterceptor()
         //initCrashlytics()
+        AnalyticsUtil.setUserProperties(applicationContext)
         initStoro()
     }
 
