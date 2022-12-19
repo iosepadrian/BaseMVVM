@@ -5,17 +5,11 @@ import android.content.Context
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.gson.GsonBuilder
 import com.zynksoftware.base.analytics.AnalyticsUtil
-import com.zynksoftware.base.di.repositoryModule
-import com.zynksoftware.base.di.useCaseModule
-import com.zynksoftware.base.di.utilsModule
-import com.zynksoftware.base.di.viewModelModule
+import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.GlobalScope
-import org.koin.android.ext.koin.androidContext
-import org.koin.android.ext.koin.androidLogger
-import org.koin.core.context.startKoin
-import org.koin.core.logger.Level
 import st.lowlevel.storo.StoroBuilder
 
+@HiltAndroidApp
 class BaseApplication : Application() {
 
     override fun onCreate() {
@@ -31,18 +25,17 @@ class BaseApplication : Application() {
     }
 
     private fun initKoin() {
-        startKoin {
-            androidContext(this@BaseApplication)
-            androidLogger(level = Level.ERROR)
-            modules(
-                listOf(
-                    repositoryModule,
-                    utilsModule,
-                    viewModelModule,
-                    useCaseModule
-                )
-            )
-        }
+//        startKoin {
+//            androidContext(this@BaseApplication)
+//            androidLogger(level = Level.ERROR)
+//            modules(
+//                listOf(
+//                    repositoryModule,
+//                    utilsModule,
+//                    useCaseModule
+//                )
+//            )
+//        }
     }
 
     private fun initInterceptor() {

@@ -5,7 +5,9 @@ import com.zynksoftware.base.R
 import com.zynksoftware.base.databinding.ActivityMainBinding
 import com.zynksoftware.base.extensions.observe
 import com.zynksoftware.base.ui.common.BaseActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
 
     override fun getViewIdToFindNavController(): Int = R.id.dashboard_nav_host_fragment

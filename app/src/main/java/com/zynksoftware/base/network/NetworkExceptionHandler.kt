@@ -4,9 +4,11 @@ import android.content.Context
 import android.util.Log
 import com.zynksoftware.base.R
 import com.zynksoftware.base.network.common.Resource
+import dagger.hilt.android.qualifiers.ApplicationContext
 import retrofit2.HttpException
+import javax.inject.Inject
 
-class NetworkExceptionHandler(private val context: Context) {
+class NetworkExceptionHandler @Inject constructor(@ApplicationContext val context: Context) {
 
     fun <T> map(throwable: Throwable): Resource<T> {
         Log.e(TAG, "", throwable)

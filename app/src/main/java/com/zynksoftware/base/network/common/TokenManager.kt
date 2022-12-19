@@ -2,9 +2,11 @@ package com.zynksoftware.base.network.common
 
 import android.content.SharedPreferences
 import com.zynksoftware.base.network.services.ApiService
+import javax.inject.Inject
 
-class TokenManager(private val sharedPreferences: SharedPreferences,
-                   private val apiService: ApiService
+class TokenManager @Inject constructor(
+    private val sharedPreferences: SharedPreferences,
+    private val apiService: ApiService
 ) {
 
     companion object {

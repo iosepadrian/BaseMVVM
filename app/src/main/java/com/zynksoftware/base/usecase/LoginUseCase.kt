@@ -5,8 +5,9 @@ import com.zynksoftware.base.network.common.TokenManager
 import com.zynksoftware.base.network.common.isSuccessful
 import com.zynksoftware.base.repository.LoginRepository
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class LoginUseCase(
+class LoginUseCase @Inject constructor(
     private val loginRepository: LoginRepository,
     private val tokenManager: TokenManager
 ) {
