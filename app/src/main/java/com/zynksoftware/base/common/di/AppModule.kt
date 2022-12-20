@@ -8,6 +8,7 @@ import androidx.security.crypto.MasterKeys
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.zynksoftware.base.AppConfig
+import com.zynksoftware.base.common.Tracking
 import com.zynksoftware.base.developeroptions.DeveloperSessionManager
 import com.zynksoftware.base.developeroptions.DeveloperViewModel
 import com.zynksoftware.base.developeroptions.LogProvider
@@ -66,7 +67,7 @@ val utilsModule = module {
     single { (activity: BaseActivity<*>) -> SecurityUtils(activity) }
 
     single { DeviceUtils(get()) }
-//    single { Tracking(get()) }
+    single { Tracking(get()) }
     single { provideRefreshTokenAuthenticator() }
 }
 
