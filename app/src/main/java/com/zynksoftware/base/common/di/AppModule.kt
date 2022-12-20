@@ -1,5 +1,6 @@
-package com.zynksoftware.base.di
+package com.zynksoftware.base.common.di
 
+import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
@@ -19,11 +20,15 @@ import com.zynksoftware.base.network.interceptors.AuthorizationInterceptor
 import com.zynksoftware.base.network.services.ServiceProvider
 import com.zynksoftware.base.network.interceptors.NetworkNotAvailableInterceptor
 import com.zynksoftware.base.repository.LoginRepository
+import com.zynksoftware.base.ui.common.BaseActivity
 import com.zynksoftware.base.ui.common.SharedViewModel
+import com.zynksoftware.base.ui.errorhandler.AlertDialogDisplayer
 import com.zynksoftware.base.ui.pager.Fragment1ViewModel
 import com.zynksoftware.base.ui.pager.PagerDashboardViewModel
 import com.zynksoftware.base.usecase.LoginUseCase
 import com.zynksoftware.base.utils.StringResourceProvider
+import com.zynksoftware.base.utils.device.DeviceUtils
+import com.zynksoftware.base.utils.security.SecurityUtils
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -57,8 +62,10 @@ val utilsModule = module {
     single { provideMoshi() }
     single { provideOkHttpBuilder() }
     single { ServiceProvider(get(), provideOkHttpBuilder().build()).createApiService() }
+    factory { (activity: Activity) -> AlertDialogDisplayer(activity) }
+    single { (activity: BaseActivity<*>) -> SecurityUtils(activity) }
 
-//    single { DeviceUtils(get(), androidApplication()) }
+    single { DeviceUtils(get()) }
 //    single { Tracking(get()) }
     single { provideRefreshTokenAuthenticator() }
 }

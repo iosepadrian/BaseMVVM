@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zynksoftware.base.databinding.ActivitySimpleRecyclerViewBinding
 import com.zynksoftware.base.developeroptions.recyclerview.adapters.DemoAdapter
-import com.zynksoftware.base.extensions.observe
+import com.zynksoftware.base.common.extensions.observe
 import com.zynksoftware.base.ui.common.BaseActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

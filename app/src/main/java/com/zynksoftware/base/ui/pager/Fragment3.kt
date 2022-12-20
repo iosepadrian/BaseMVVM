@@ -4,7 +4,7 @@ import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.zynksoftware.base.R
 import com.zynksoftware.base.databinding.FragmentDemoImageBinding
-import com.zynksoftware.base.extensions.toast
+import com.zynksoftware.base.common.extensions.toast
 import com.zynksoftware.base.ui.common.BaseFragment
 import com.zynksoftware.base.ui.components.ImagePickerBottomSheet
 import com.zynksoftware.base.utils.image.ImagePickerUtils

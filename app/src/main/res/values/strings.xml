@@ -19,4 +19,13 @@
     <string name="lbl_move_up_or_down">Move up or down</string>
     <string name="lbl_double_tap_to_dismiss">double tap to dismiss</string>
     <string name="lbl_to">to</string>
+    <string name="ok_label">OK</string>
+    <string name="error_label">Error</string>
+
+    <string name="device_rooted">Device is rooted. Application will not work.</string>
+    <string name="device_is_in_debug">Device is in debug mode. Application will not work.</string>
+    <string name="reverse_engineering_detected">Reverse engineering tools detected. Application will not work.</string>
+    <string name="emulator_detected">Emulator detected. Application will not work.</string>
+
+
 </resources>

@@ -5,10 +5,10 @@ import android.content.Context
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.gson.GsonBuilder
 import com.zynksoftware.base.analytics.AnalyticsUtil
-import com.zynksoftware.base.di.repositoryModule
-import com.zynksoftware.base.di.useCaseModule
-import com.zynksoftware.base.di.utilsModule
-import com.zynksoftware.base.di.viewModelModule
+import com.zynksoftware.base.common.di.repositoryModule
+import com.zynksoftware.base.common.di.useCaseModule
+import com.zynksoftware.base.common.di.utilsModule
+import com.zynksoftware.base.common.di.viewModelModule
 import kotlinx.coroutines.GlobalScope
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger

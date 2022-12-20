@@ -1,4 +1,4 @@
-package com.zynksoftware.base.extensions
+package com.zynksoftware.base.common.extensions
 
 import okhttp3.Request
 import okhttp3.Response
