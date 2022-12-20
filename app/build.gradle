@@ -128,4 +128,7 @@ dependencies {
     //emulator detector
     implementation 'com.github.mofneko:EmulatorDetector:1.1.0'
 
+    implementation "androidx.biometric:biometric:1.1.0"
+
+
 }

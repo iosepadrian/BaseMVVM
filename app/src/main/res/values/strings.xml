@@ -27,5 +27,8 @@
     <string name="reverse_engineering_detected">Reverse engineering tools detected. Application will not work.</string>
     <string name="emulator_detected">Emulator detected. Application will not work.</string>
 
+    <string name="biometric_dialog_title">Biometric login for my app</string>
+    <string name="biometric_dialog_subtitle">Log in using your biometric credential</string>
+    <string name="biometric_dialog_negative_button">Use account password</string>
 
 </resources>
