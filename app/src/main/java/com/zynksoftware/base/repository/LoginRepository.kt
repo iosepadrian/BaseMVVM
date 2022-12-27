@@ -4,8 +4,9 @@ import com.zynksoftware.base.network.RemoteServicesHandler
 import com.zynksoftware.base.network.common.Resource
 import com.zynksoftware.base.network.common.TokenResponse
 import com.zynksoftware.base.network.services.ApiService
+import javax.inject.Inject
 
-class LoginRepository(
+class LoginRepository @Inject constructor(
     private val apiService: ApiService,
     private val servicesHandler: RemoteServicesHandler
 ) {

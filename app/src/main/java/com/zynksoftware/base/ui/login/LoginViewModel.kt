@@ -5,10 +5,12 @@ import androidx.lifecycle.viewModelScope
 import com.zynksoftware.base.network.common.Status
 import com.zynksoftware.base.ui.common.BaseViewModel
 import com.zynksoftware.base.usecase.LoginUseCase
-import kotlinx.coroutines.flow.collect
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class LoginViewModel(
+@HiltViewModel
+class LoginViewModel @Inject constructor(
     private val loginUseCase: LoginUseCase
 ) : BaseViewModel() {
 

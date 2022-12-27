@@ -14,7 +14,9 @@ import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.ComponentActivity
 import androidx.activity.result.ActivityResult
+import androidx.activity.viewModels
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavHost
@@ -25,11 +27,8 @@ import com.zynksoftware.base.receivers.sms.SmsBroadcastReceiver
 import com.zynksoftware.base.utils.sms.SmsUtils
 import com.zynksoftware.base.utils.network.NetworkCallback
 import com.zynksoftware.base.utils.network.NetworkConnection
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.component.KoinComponent
 
-abstract class BaseActivity<B : ViewBinding> (private val viewBinder: (LayoutInflater) -> B):
-    AppCompatActivity(), KoinComponent {
+abstract class BaseActivity<B : ViewBinding> (private val viewBinder: (LayoutInflater) -> B): AppCompatActivity() {
 
     companion object {
         private val TAG = BaseActivity::class.simpleName
@@ -67,7 +66,7 @@ abstract class BaseActivity<B : ViewBinding> (private val viewBinder: (LayoutInf
 
     protected lateinit var binding: B
 
-    protected val sharedViewModel: SharedViewModel by viewModel()
+    protected val sharedViewModel: SharedViewModel by viewModels()
 
     val activityLauncher: BetterActivityResult<Intent, ActivityResult> =
         BetterActivityResult.registerActivityForResult(this)

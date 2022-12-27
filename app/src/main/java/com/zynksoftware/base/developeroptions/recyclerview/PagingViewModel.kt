@@ -8,17 +8,19 @@ import com.zynksoftware.base.ui.common.recyclerview.PagingEvent
 import com.zynksoftware.base.ui.common.recyclerview.combineForEvent
 import com.zynksoftware.base.ui.common.recyclerview.createPager
 import com.zynksoftware.base.utils.ConsumableLiveData
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.ResponseBody
 import okhttp3.ResponseBody.Companion.toResponseBody
 import retrofit2.HttpException
 import retrofit2.Response
+import javax.inject.Inject
 
-class PagingViewModel: BaseViewModel() {
+@HiltViewModel
+class PagingViewModel @Inject constructor(): BaseViewModel() {
 
     val listLiveData = ConsumableLiveData<PagingData<DemoModel>>(true)
 

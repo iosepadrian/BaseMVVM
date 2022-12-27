@@ -7,16 +7,15 @@ import okhttp3.Authenticator
 import okhttp3.Request
 import okhttp3.Response
 import okhttp3.Route
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.inject
+import javax.inject.Inject
 
-class RefreshTokenAuthenticator: Authenticator, KoinComponent {
+class RefreshTokenAuthenticator: Authenticator {
 
     companion object {
         private const val API_MAX_RETRIES = 2
     }
 
-    private val getTokenUseCase: GetTokenUseCase by inject()
+    @Inject lateinit var getTokenUseCase: GetTokenUseCase
     //private val logoutUseCase: LogoutUseCase by inject()
 
     override fun authenticate(route: Route?, response: Response): Request? = when {
