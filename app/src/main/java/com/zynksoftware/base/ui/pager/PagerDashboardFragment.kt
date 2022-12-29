@@ -10,12 +10,16 @@ import com.zynksoftware.base.ui.common.BaseFragment
 import com.zynksoftware.base.ui.common.SharedViewModel
 import com.zynksoftware.base.ui.pager.components.NavigationModel
 import com.zynksoftware.base.ui.pager.components.OnPageChangedListener
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PagerDashboardFragment :
     BaseFragment<FragmentPagerDashboardBinding>(FragmentPagerDashboardBinding::inflate) {
 
     private val pagerDashboardViewModel: PagerDashboardViewModel by viewModels()
     private val sharedViewModel: SharedViewModel by activityViewModels()
+
+    override fun getVM() = pagerDashboardViewModel
 
     override fun FragmentPagerDashboardBinding.onViewCreated(savedInstanceState: Bundle?) {
         bottomNavigation.setTabSelectedListener(object: OnPageChangedListener {

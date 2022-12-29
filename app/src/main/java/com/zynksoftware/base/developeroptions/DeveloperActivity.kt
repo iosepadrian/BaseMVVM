@@ -14,8 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class DeveloperActivity :
-    BaseActivity<ActivityDeveloperBinding>(ActivityDeveloperBinding::inflate) {
+class DeveloperActivity : BaseActivity<ActivityDeveloperBinding>(ActivityDeveloperBinding::inflate) {
     @Inject
     lateinit var logProvider: LogProvider
     private val developerViewModel: DeveloperViewModel by viewModels()
@@ -26,6 +25,10 @@ class DeveloperActivity :
             context.startActivity(intent)
         }
     }
+
+    override fun getViewIdToFindNavController(): Int = -1
+
+    override fun getVM() = developerViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -99,9 +102,5 @@ class DeveloperActivity :
             }
             showToast(message)
         }
-    }
-
-    override fun getViewIdToFindNavController(): Int {
-        return -1
     }
 }

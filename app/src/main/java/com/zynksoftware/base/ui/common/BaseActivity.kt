@@ -14,7 +14,6 @@ import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.ComponentActivity
 import androidx.activity.result.ActivityResult
 import androidx.activity.viewModels
 import androidx.annotation.IdRes
@@ -23,15 +22,18 @@ import androidx.navigation.NavHost
 import androidx.navigation.findNavController
 import androidx.viewbinding.ViewBinding
 import com.google.android.gms.auth.api.phone.SmsRetriever
+import com.zynksoftware.base.extensions.observe
 import com.zynksoftware.base.receivers.sms.SmsBroadcastReceiver
-import com.zynksoftware.base.utils.sms.SmsUtils
 import com.zynksoftware.base.utils.network.NetworkCallback
 import com.zynksoftware.base.utils.network.NetworkConnection
+import com.zynksoftware.base.utils.sms.SmsUtils
 
 abstract class BaseActivity<B : ViewBinding> (private val viewBinder: (LayoutInflater) -> B): AppCompatActivity() {
 
     companion object {
         private val TAG = BaseActivity::class.simpleName
+
+        private const val PROGRESS = "Progress"
 
         var isRefreshTokenUserActiveActivityRunning = false
     }
@@ -41,6 +43,8 @@ abstract class BaseActivity<B : ViewBinding> (private val viewBinder: (LayoutInf
      * Should return the view id of a [NavHost] or a view within a [NavHost]
      */
     protected abstract fun getViewIdToFindNavController(): Int
+
+    abstract fun getVM(): BaseViewModel
 
     private val networkConnection = NetworkConnection
 
@@ -78,6 +82,19 @@ abstract class BaseActivity<B : ViewBinding> (private val viewBinder: (LayoutInf
         setContentView(binding.root)
         registerNetworkCallback()
 
+        with(getVM()) {
+            observe(isLoading) { show ->
+                if (show) {
+                    showProgress()
+                } else {
+                    hideProgress()
+                }
+            }
+
+            observe(errorMessage) { message ->
+                showToast(message)
+            }
+        }
     }
 
     override fun onResume() {
@@ -98,6 +115,14 @@ abstract class BaseActivity<B : ViewBinding> (private val viewBinder: (LayoutInf
         super.onDestroy()
         unregisterNetworkCallback()
     }
+
+    private fun showProgress() {
+        if (supportFragmentManager.fragments.filterIsInstance<BaseProgress>().isEmpty()) {
+            BaseProgress().show(supportFragmentManager, PROGRESS)
+        }
+    }
+
+    private fun hideProgress() = supportFragmentManager.fragments.filterIsInstance<BaseProgress>().forEach { it.dismiss() }
 
     protected fun startActivitySmsConsent(intent: Intent) {
         activityLauncher.launch(intent, onActivityResult = { result ->

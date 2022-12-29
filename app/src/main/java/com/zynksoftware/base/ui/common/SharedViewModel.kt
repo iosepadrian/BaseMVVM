@@ -8,11 +8,5 @@ import javax.inject.Inject
 @HiltViewModel
 class SharedViewModel @Inject constructor(): ViewModel() {
 
-    var isLoading = ConsumableLiveData<Boolean>(true)
-
     var onNetworkChangedLiveData = ConsumableLiveData<Boolean>(false)
-
-    fun setIsLoading(value: Boolean) {
-        isLoading.setValue(value)
-    }
 }
