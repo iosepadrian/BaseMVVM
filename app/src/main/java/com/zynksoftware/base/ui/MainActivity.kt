@@ -10,7 +10,6 @@ import com.zynksoftware.base.utils.security.SecurityUtils
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import android.util.Log
-import com.zynksoftware.base.ui.factory.SecurityUtilsFactory
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
@@ -19,21 +18,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     override fun getViewIdToFindNavController(): Int = R.id.dashboard_nav_host_fragment
     override fun getVM(): MainViewModel = viewModel
 
-    @Inject
-    lateinit var securityUtilsFactory: SecurityUtilsFactory
-
-    private lateinit var securityUtils: SecurityUtils
-
-    private fun setupSecurityUtils(): SecurityUtils {
-        return securityUtilsFactory.create(this)
-    }
-
+    @Inject lateinit var securityUtils: SecurityUtils
     @Inject lateinit var deviceUtils: DeviceUtils
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        securityUtils = setupSecurityUtils()
 
         deviceUtils.saveScreenResolution(this)
 

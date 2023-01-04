@@ -1,13 +1,16 @@
 package com.zynksoftware.base.ui.errorhandler
 
+import android.app.Activity
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.zynksoftware.base.R
-import dagger.assisted.Assisted
-import dagger.assisted.AssistedInject
+import dagger.hilt.android.qualifiers.ActivityContext
+import dagger.hilt.android.scopes.ActivityScoped
+import javax.inject.Inject
 
-class AlertDialogDisplayer @AssistedInject constructor(@Assisted private val activity: Context) {
+@ActivityScoped
+class AlertDialogDisplayer @Inject constructor(@ActivityContext private val activity: Context) {
 
     private var alertDialogBuilder: MaterialAlertDialogBuilder? = null
     private var alertDialog: AlertDialog? = null

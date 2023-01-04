@@ -10,29 +10,15 @@ import com.zynksoftware.base.R
 import com.zynksoftware.base.common.extensions.debug
 import com.zynksoftware.base.common.extensions.err
 import com.zynksoftware.base.ui.errorhandler.AlertDialogDisplayer
-import com.zynksoftware.base.ui.factory.AlertDialogDisplayerFactory
-import dagger.assisted.Assisted
-import dagger.assisted.AssistedInject
+import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 import javax.inject.Inject
 
-class SecurityUtils @AssistedInject constructor(@Assisted val context: Context) {
-
-    @Inject
-    lateinit var alertDialogDisplayerFactory: AlertDialogDisplayerFactory
-
-    private lateinit var alertDialogDisplayer: AlertDialogDisplayer
-
-    private fun setupAlertDialogDisplayer(context: Context): AlertDialogDisplayer {
-        return alertDialogDisplayerFactory.create(context)
-    }
+class SecurityUtils @Inject constructor(@ApplicationContext private val context: Context, private val alertDialogDisplayer: AlertDialogDisplayer) {
 
     fun checkSecurity(): Boolean {
-
-        alertDialogDisplayer = setupAlertDialogDisplayer(context)
-
         if (CommonUtils.isRooted(context)) {
             alertDialogDisplayer.showAlertDialog(context.getString(R.string.error_label), context.getString(R.string.device_rooted))
             return false
