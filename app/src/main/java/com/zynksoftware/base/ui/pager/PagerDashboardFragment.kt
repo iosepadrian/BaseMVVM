@@ -1,6 +1,8 @@
 package com.zynksoftware.base.ui.pager
 
 import android.os.Bundle
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import com.zynksoftware.base.R
 import com.zynksoftware.base.databinding.FragmentPagerDashboardBinding
 import com.zynksoftware.base.common.extensions.observe
@@ -8,14 +10,16 @@ import com.zynksoftware.base.ui.common.BaseFragment
 import com.zynksoftware.base.ui.common.SharedViewModel
 import com.zynksoftware.base.ui.pager.components.NavigationModel
 import com.zynksoftware.base.ui.pager.components.OnPageChangedListener
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PagerDashboardFragment :
     BaseFragment<FragmentPagerDashboardBinding>(FragmentPagerDashboardBinding::inflate) {
 
-    private val pagerDashboardViewModel: PagerDashboardViewModel by viewModel()
-    private val sharedViewModel: SharedViewModel by sharedViewModel()
+    private val pagerDashboardViewModel: PagerDashboardViewModel by viewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
+
+    override fun getVM() = pagerDashboardViewModel
 
     override fun FragmentPagerDashboardBinding.onViewCreated(savedInstanceState: Bundle?) {
         bottomNavigation.setTabSelectedListener(object: OnPageChangedListener {

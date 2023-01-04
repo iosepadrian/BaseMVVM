@@ -12,12 +12,20 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavGraph
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
+import com.zynksoftware.base.extensions.observe
 
 abstract class BaseFragment<B : ViewBinding>(val viewBinder: (LayoutInflater) -> B) : Fragment() {
 
     protected var binding: B? = null
 
     private var toast: Toast? = null
+
+    abstract fun getVM(): BaseViewModel
+    abstract fun B.onViewCreated(savedInstanceState: Bundle?)
+
+    companion object {
+        private const val PROGRESS = "Progress"
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return viewBinder(inflater).let {
@@ -28,9 +36,21 @@ abstract class BaseFragment<B : ViewBinding>(val viewBinder: (LayoutInflater) ->
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.onViewCreated(savedInstanceState)
-    }
 
-    abstract fun B.onViewCreated(savedInstanceState: Bundle?)
+        with(getVM()) {
+            observe(isLoading) { show ->
+                if (show) {
+                    showProgress()
+                } else {
+                    hideProgress()
+                }
+            }
+
+            observe(errorMessage) { message ->
+                showToast(message)
+            }
+        }
+    }
 
     override fun onDestroyView() {
         binding = null
@@ -80,4 +100,12 @@ abstract class BaseFragment<B : ViewBinding>(val viewBinder: (LayoutInflater) ->
     protected fun hideKeyboard() {
         ViewCompat.getWindowInsetsController(requireView())?.hide(WindowInsetsCompat.Type.ime())
     }
+
+    protected fun showProgress() {
+        if (parentFragmentManager.fragments.filterIsInstance<BaseProgress>().isEmpty()) {
+            BaseProgress().show(parentFragmentManager, PROGRESS)
+        }
+    }
+
+    protected fun hideProgress() = parentFragmentManager.fragments.filterIsInstance<BaseProgress>().forEach { it.dismiss() }
 }

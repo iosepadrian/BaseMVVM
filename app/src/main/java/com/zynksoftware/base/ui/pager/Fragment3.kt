@@ -6,6 +6,7 @@ import com.zynksoftware.base.R
 import com.zynksoftware.base.databinding.FragmentDemoImageBinding
 import com.zynksoftware.base.common.extensions.toast
 import com.zynksoftware.base.ui.common.BaseFragment
+import com.zynksoftware.base.ui.common.BaseViewModel
 import com.zynksoftware.base.ui.components.ImagePickerBottomSheet
 import com.zynksoftware.base.utils.image.ImagePickerUtils
 
@@ -16,6 +17,7 @@ class Fragment3 : BaseFragment<FragmentDemoImageBinding>(FragmentDemoImageBindin
             return Fragment3()
         }
     }
+    override fun getVM() = BaseViewModel()
 
     private val imagePickerUtils = ImagePickerUtils(this)
 

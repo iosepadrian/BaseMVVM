@@ -8,12 +8,11 @@ import okhttp3.Credentials
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.inject
+import javax.inject.Inject
 
-class AuthorizationInterceptor : Interceptor, KoinComponent {
+class AuthorizationInterceptor : Interceptor {
 
-    private val getTokenUseCase: GetTokenUseCase by inject()
+    @Inject lateinit var getTokenUseCase: GetTokenUseCase
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val newRequest = chain.request().signedRequest()

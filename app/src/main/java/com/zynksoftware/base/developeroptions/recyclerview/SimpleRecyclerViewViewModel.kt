@@ -4,10 +4,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.zynksoftware.base.models.DemoModel
 import com.zynksoftware.base.ui.common.BaseViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SimpleRecyclerViewViewModel: BaseViewModel() {
+@HiltViewModel
+class SimpleRecyclerViewViewModel @Inject constructor(): BaseViewModel() {
 
     val listLiveData = MutableLiveData<List<DemoModel>>()
 

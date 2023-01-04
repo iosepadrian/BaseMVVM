@@ -5,8 +5,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 import retrofit2.Response
+import javax.inject.Inject
 
-class RemoteServicesHandler(private val errorHandler: NetworkExceptionHandler) {
+class RemoteServicesHandler @Inject constructor(private val errorHandler: NetworkExceptionHandler) {
 
     suspend fun <T : Any, R : Response<*>> makeTheCallAndHandleResponse(
         serviceCall: suspend () -> (R),

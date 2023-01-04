@@ -22,6 +22,7 @@ class BaseRecyclerView @JvmOverloads constructor(
         binding.componentRecyclerView.layoutManager = layoutManager
     }
 
+//      TODO: other param for R.layout.footer, default existing one.
     fun setAdapter(adapter: PagingDataAdapter<*, *>) {
         val footerLoadStateAdapter = PagingLoadStateAdapter { adapter.retry() }
         binding.componentRecyclerView.adapter = adapter.withLoadStateFooter(footerLoadStateAdapter)

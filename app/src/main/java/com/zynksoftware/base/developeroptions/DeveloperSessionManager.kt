@@ -1,8 +1,11 @@
 package com.zynksoftware.base.developeroptions
 
 import android.content.SharedPreferences
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class DeveloperSessionManager(private val sharedPreferences: SharedPreferences) {
+@Singleton
+class DeveloperSessionManager @Inject constructor(private val sharedPreferences: SharedPreferences) {
 
     companion object {
         private const val LOGS_SWITCH = "logSwitch"

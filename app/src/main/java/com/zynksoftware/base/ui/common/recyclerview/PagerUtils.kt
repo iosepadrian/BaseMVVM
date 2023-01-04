@@ -1,8 +1,6 @@
 package com.zynksoftware.base.ui.common.recyclerview
 
-import android.util.Log
 import androidx.paging.*
-import com.zynksoftware.base.models.DemoModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

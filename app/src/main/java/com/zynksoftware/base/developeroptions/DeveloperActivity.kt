@@ -4,18 +4,20 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
+import androidx.activity.viewModels
 import com.zynksoftware.base.R
 import com.zynksoftware.base.databinding.ActivityDeveloperBinding
 import com.zynksoftware.base.developeroptions.recyclerview.PagingActivity
 import com.zynksoftware.base.developeroptions.recyclerview.SimpleRecyclerViewActivity
 import com.zynksoftware.base.ui.common.BaseActivity
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.component.inject
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-class DeveloperActivity :
-    BaseActivity<ActivityDeveloperBinding>(ActivityDeveloperBinding::inflate) {
-    private val logProvider: LogProvider by inject()
-    private val developerViewModel: DeveloperViewModel by viewModel()
+@AndroidEntryPoint
+class DeveloperActivity : BaseActivity<ActivityDeveloperBinding>(ActivityDeveloperBinding::inflate) {
+    @Inject
+    lateinit var logProvider: LogProvider
+    private val developerViewModel: DeveloperViewModel by viewModels()
 
     companion object {
         fun start(context: Context) {
@@ -23,6 +25,10 @@ class DeveloperActivity :
             context.startActivity(intent)
         }
     }
+
+    override fun getViewIdToFindNavController(): Int = -1
+
+    override fun getVM() = developerViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -96,9 +102,5 @@ class DeveloperActivity :
             }
             showToast(message)
         }
-    }
-
-    override fun getViewIdToFindNavController(): Int {
-        return -1
     }
 }

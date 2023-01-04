@@ -5,6 +5,7 @@ import com.zynksoftware.base.databinding.FragmentDemo1Binding
 import com.zynksoftware.base.developeroptions.DeveloperActivity
 import com.zynksoftware.base.common.extensions.makeLinks
 import com.zynksoftware.base.ui.common.BaseFragment
+import com.zynksoftware.base.ui.common.BaseViewModel
 
 class Fragment1 : BaseFragment<FragmentDemo1Binding>(FragmentDemo1Binding::inflate) {
 
@@ -13,6 +14,8 @@ class Fragment1 : BaseFragment<FragmentDemo1Binding>(FragmentDemo1Binding::infla
             return Fragment1()
         }
     }
+
+    override fun getVM() = BaseViewModel()
 
     override fun FragmentDemo1Binding.onViewCreated(savedInstanceState: Bundle?) {
         val clickableText = "here"
