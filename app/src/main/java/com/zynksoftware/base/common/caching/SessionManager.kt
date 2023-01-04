@@ -1,8 +1,11 @@
 package com.zynksoftware.base.common.caching
 
 import android.content.SharedPreferences
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class SessionManager(private val sharedPreferences: SharedPreferences) {
+@Singleton
+class SessionManager @Inject constructor(private val sharedPreferences: SharedPreferences) {
 
     companion object {
         private const val USER_ID = "USER_ID"

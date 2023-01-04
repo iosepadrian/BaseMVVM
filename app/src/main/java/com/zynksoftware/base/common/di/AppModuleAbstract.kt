@@ -1,4 +1,4 @@
-package com.zynksoftware.base.di
+package com.zynksoftware.base.common.di
 
 import com.zynksoftware.base.utils.StringResource
 import com.zynksoftware.base.utils.StringResourceProvider

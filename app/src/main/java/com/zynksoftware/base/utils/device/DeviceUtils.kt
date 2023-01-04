@@ -5,8 +5,9 @@ import android.content.SharedPreferences
 import android.content.res.Resources
 import android.os.Build
 import android.util.DisplayMetrics
+import javax.inject.Inject
 
-class DeviceUtils(private val sharedPreferences: SharedPreferences) {
+class DeviceUtils @Inject constructor(private val sharedPreferences: SharedPreferences) {
 
     companion object{
         private const val SCREEN_HEIGHT = "SCREEN_HEIGHT"

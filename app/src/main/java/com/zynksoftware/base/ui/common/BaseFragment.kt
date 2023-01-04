@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavGraph
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
-import com.zynksoftware.base.extensions.observe
+import com.zynksoftware.base.common.extensions.observe
 
 abstract class BaseFragment<B : ViewBinding>(val viewBinder: (LayoutInflater) -> B) : Fragment() {
 

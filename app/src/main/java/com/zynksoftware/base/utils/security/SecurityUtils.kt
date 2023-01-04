@@ -10,19 +10,29 @@ import com.zynksoftware.base.R
 import com.zynksoftware.base.common.extensions.debug
 import com.zynksoftware.base.common.extensions.err
 import com.zynksoftware.base.ui.errorhandler.AlertDialogDisplayer
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.inject
-import org.koin.core.parameter.parametersOf
+import com.zynksoftware.base.ui.factory.AlertDialogDisplayerFactory
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedInject
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
+import javax.inject.Inject
 
+class SecurityUtils @AssistedInject constructor(@Assisted val context: Context) {
 
-class SecurityUtils(val context: Context): KoinComponent {
+    @Inject
+    lateinit var alertDialogDisplayerFactory: AlertDialogDisplayerFactory
 
-    private val alertDialogDisplayer: AlertDialogDisplayer by inject { parametersOf(context) }
+    private lateinit var alertDialogDisplayer: AlertDialogDisplayer
+
+    private fun setupAlertDialogDisplayer(context: Context): AlertDialogDisplayer {
+        return alertDialogDisplayerFactory.create(context)
+    }
 
     fun checkSecurity(): Boolean {
+
+        alertDialogDisplayer = setupAlertDialogDisplayer(context)
+
         if (CommonUtils.isRooted(context)) {
             alertDialogDisplayer.showAlertDialog(context.getString(R.string.error_label), context.getString(R.string.device_rooted))
             return false

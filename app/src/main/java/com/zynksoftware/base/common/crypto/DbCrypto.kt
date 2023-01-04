@@ -6,7 +6,9 @@ import java.io.IOException
 import java.security.*
 import javax.crypto.*
 import javax.crypto.spec.GCMParameterSpec
+import javax.inject.Singleton
 
+@Singleton
 class DbCrypto {
     companion object {
         private const val ALIAS: String = "STORO_DB_KEY"

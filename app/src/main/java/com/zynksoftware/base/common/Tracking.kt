@@ -2,8 +2,11 @@ package com.zynksoftware.base.common
 
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.zynksoftware.base.common.caching.SessionManager
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class Tracking(private val sessionManager: SessionManager) {
+@Singleton
+class Tracking @Inject constructor(private val sessionManager: SessionManager) {
 
     companion object {
         const val FAILED_TO_ENCRYPT_DATA = "Failed to encrypt data"

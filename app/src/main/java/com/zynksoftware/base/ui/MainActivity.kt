@@ -4,12 +4,13 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import com.zynksoftware.base.R
 import com.zynksoftware.base.databinding.ActivityMainBinding
-import com.zynksoftware.base.common.extensions.observe
 import com.zynksoftware.base.ui.common.BaseActivity
 import com.zynksoftware.base.utils.device.DeviceUtils
 import com.zynksoftware.base.utils.security.SecurityUtils
-import org.koin.android.ext.android.inject
-import org.koin.core.parameter.parametersOf
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
+import android.util.Log
+import com.zynksoftware.base.ui.factory.SecurityUtilsFactory
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
@@ -18,20 +19,26 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     override fun getViewIdToFindNavController(): Int = R.id.dashboard_nav_host_fragment
     override fun getVM(): MainViewModel = viewModel
 
-    private val securityUtils: SecurityUtils by inject { parametersOf(this) }
-    private val deviceUtils: DeviceUtils by inject()
+    @Inject
+    lateinit var securityUtilsFactory: SecurityUtilsFactory
+
+    private lateinit var securityUtils: SecurityUtils
+
+    private fun setupSecurityUtils(): SecurityUtils {
+        return securityUtilsFactory.create(this)
+    }
+
+    @Inject lateinit var deviceUtils: DeviceUtils
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        securityUtils = setupSecurityUtils()
+
         deviceUtils.saveScreenResolution(this)
 
-        /*if (!securityUtils.checkSecurity()) {
-            return
-        }*/
-
-        observe(sharedViewModel.isLoading){
-            binding.loadingComponent.setIsLoading(it)
+        if (!securityUtils.checkSecurity()) {
+            Log.d("CheckSecurity", "Not secure")
         }
     }
 

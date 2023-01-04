@@ -1,23 +1,17 @@
 package com.zynksoftware.base.common.di
 
-import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import com.zynksoftware.base.AppConfig
-import com.zynksoftware.base.developeroptions.DeveloperSessionManager
-import com.zynksoftware.base.developeroptions.DeveloperViewModel
 import com.zynksoftware.base.developeroptions.LogProvider
 import com.zynksoftware.base.network.services.ApiService
 import com.zynksoftware.base.network.services.ServiceProvider
-import com.zynksoftware.base.network.interceptors.NetworkNotAvailableInterceptor
-import com.zynksoftware.base.repository.LoginRepository
-import com.zynksoftware.base.ui.common.SharedViewModel
-import com.zynksoftware.base.ui.pager.Fragment1ViewModel
-import com.zynksoftware.base.ui.pager.PagerDashboardViewModel
-import com.zynksoftware.base.usecase.LoginUseCase
 import com.zynksoftware.base.utils.StringResourceProvider
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 
 @InstallIn(SingletonComponent::class)
