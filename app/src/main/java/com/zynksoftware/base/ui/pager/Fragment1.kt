@@ -3,7 +3,7 @@ package com.zynksoftware.base.ui.pager
 import android.os.Bundle
 import com.zynksoftware.base.databinding.FragmentDemo1Binding
 import com.zynksoftware.base.developeroptions.DeveloperActivity
-import com.zynksoftware.base.extensions.makeLinks
+import com.zynksoftware.base.common.extensions.makeLinks
 import com.zynksoftware.base.ui.common.BaseFragment
 import com.zynksoftware.base.ui.common.BaseViewModel
 

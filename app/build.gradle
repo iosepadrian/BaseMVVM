@@ -136,7 +136,13 @@ dependencies {
 
     //LeakCanary
     //debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.8.1'
+
+    //emulator detector
+    implementation 'com.github.mofneko:EmulatorDetector:1.1.0'
+
+    implementation "androidx.biometric:biometric:1.1.0"
 }
+
 
 // Allow references to generated code
 kapt {

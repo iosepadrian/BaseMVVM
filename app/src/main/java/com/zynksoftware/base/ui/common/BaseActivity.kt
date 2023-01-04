@@ -22,7 +22,7 @@ import androidx.navigation.NavHost
 import androidx.navigation.findNavController
 import androidx.viewbinding.ViewBinding
 import com.google.android.gms.auth.api.phone.SmsRetriever
-import com.zynksoftware.base.extensions.observe
+import com.zynksoftware.base.common.extensions.observe
 import com.zynksoftware.base.receivers.sms.SmsBroadcastReceiver
 import com.zynksoftware.base.utils.network.NetworkCallback
 import com.zynksoftware.base.utils.network.NetworkConnection

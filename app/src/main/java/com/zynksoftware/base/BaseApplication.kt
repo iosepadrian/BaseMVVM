@@ -17,25 +17,10 @@ class BaseApplication : Application() {
 
         appContext = applicationContext
 
-        initKoin()
         initInterceptor()
         //initCrashlytics()
         AnalyticsUtil.setUserProperties(applicationContext)
         initStoro()
-    }
-
-    private fun initKoin() {
-//        startKoin {
-//            androidContext(this@BaseApplication)
-//            androidLogger(level = Level.ERROR)
-//            modules(
-//                listOf(
-//                    repositoryModule,
-//                    utilsModule,
-//                    useCaseModule
-//                )
-//            )
-//        }
     }
 
     private fun initInterceptor() {

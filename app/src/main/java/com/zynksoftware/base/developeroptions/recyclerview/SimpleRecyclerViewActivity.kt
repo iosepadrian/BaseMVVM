@@ -7,7 +7,7 @@ import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zynksoftware.base.databinding.ActivitySimpleRecyclerViewBinding
 import com.zynksoftware.base.developeroptions.recyclerview.adapters.DemoAdapter
-import com.zynksoftware.base.extensions.observe
+import com.zynksoftware.base.common.extensions.observe
 import com.zynksoftware.base.ui.common.BaseActivity
 
 class SimpleRecyclerViewActivity: BaseActivity<ActivitySimpleRecyclerViewBinding>(ActivitySimpleRecyclerViewBinding::inflate) {

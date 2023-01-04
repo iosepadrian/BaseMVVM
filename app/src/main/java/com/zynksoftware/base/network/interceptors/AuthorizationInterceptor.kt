@@ -1,7 +1,7 @@
 package com.zynksoftware.base.network.interceptors
 
 import com.zynksoftware.base.BuildConfig
-import com.zynksoftware.base.extensions.signWithToken
+import com.zynksoftware.base.common.extensions.signWithToken
 import com.zynksoftware.base.network.common.AuthorizationType
 import com.zynksoftware.base.usecase.GetTokenUseCase
 import okhttp3.Credentials

@@ -13,8 +13,8 @@ import com.fondesa.kpermissions.allShouldShowRationale
 import com.fondesa.kpermissions.extension.permissionsBuilder
 import com.fondesa.kpermissions.request.PermissionRequest
 import com.zynksoftware.base.R
-import com.zynksoftware.base.extensions.toActualFile
-import com.zynksoftware.base.extensions.toast
+import com.zynksoftware.base.common.extensions.toActualFile
+import com.zynksoftware.base.common.extensions.toast
 import com.zynksoftware.base.ui.common.BaseFragment
 import com.zynksoftware.base.utils.ConsumableLiveData
 import com.zynksoftware.base.utils.file.FileUtils

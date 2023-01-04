@@ -5,7 +5,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.zynksoftware.base.R
 import com.zynksoftware.base.databinding.FragmentPagerDashboardBinding
-import com.zynksoftware.base.extensions.observe
+import com.zynksoftware.base.common.extensions.observe
 import com.zynksoftware.base.ui.common.BaseFragment
 import com.zynksoftware.base.ui.common.SharedViewModel
 import com.zynksoftware.base.ui.pager.components.NavigationModel

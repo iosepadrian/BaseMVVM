@@ -1,4 +1,4 @@
-package com.zynksoftware.base.extensions
+package com.zynksoftware.base.common.extensions
 
 import android.text.*
 import android.text.method.LinkMovementMethod

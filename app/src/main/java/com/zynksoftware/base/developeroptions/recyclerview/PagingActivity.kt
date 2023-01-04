@@ -6,8 +6,8 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zynksoftware.base.databinding.ActivityPagingBinding
+import com.zynksoftware.base.common.extensions.observe
 import com.zynksoftware.base.developeroptions.recyclerview.adapters.DemoInfiniteAdapter
-import com.zynksoftware.base.extensions.observe
 import com.zynksoftware.base.ui.common.BaseActivity
 
 class PagingActivity : BaseActivity<ActivityPagingBinding>(ActivityPagingBinding::inflate)  {

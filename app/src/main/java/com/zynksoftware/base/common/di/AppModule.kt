@@ -1,4 +1,4 @@
-package com.zynksoftware.base.di
+package com.zynksoftware.base.common.di
 
 import android.content.Context
 import android.content.SharedPreferences

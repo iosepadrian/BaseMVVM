@@ -1,4 +1,4 @@
-package com.zynksoftware.base.extensions
+package com.zynksoftware.base.common.extensions
 
 import androidx.appcompat.app.AppCompatActivity
 import com.fondesa.kpermissions.allGranted

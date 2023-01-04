@@ -1,7 +1,7 @@
 package com.zynksoftware.base.network
 
-import com.zynksoftware.base.extensions.createSignedRequest
-import com.zynksoftware.base.extensions.retryCount
+import com.zynksoftware.base.common.extensions.createSignedRequest
+import com.zynksoftware.base.common.extensions.retryCount
 import com.zynksoftware.base.usecase.GetTokenUseCase
 import okhttp3.Authenticator
 import okhttp3.Request
