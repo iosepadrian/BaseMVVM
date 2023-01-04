@@ -12,6 +12,7 @@ import com.zynksoftware.base.ui.common.BaseActivity
 
 class SimpleRecyclerViewActivity: BaseActivity<ActivitySimpleRecyclerViewBinding>(ActivitySimpleRecyclerViewBinding::inflate) {
     override fun getViewIdToFindNavController(): Int = -1
+    override fun getVM() = viewModel
 
     private val viewModel: SimpleRecyclerViewViewModel by viewModels()
 

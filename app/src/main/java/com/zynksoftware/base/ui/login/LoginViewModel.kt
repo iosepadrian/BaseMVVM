@@ -1,12 +1,9 @@
 package com.zynksoftware.base.ui.login
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
-import com.zynksoftware.base.network.common.Status
 import com.zynksoftware.base.ui.common.BaseViewModel
 import com.zynksoftware.base.usecase.LoginUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -19,22 +16,8 @@ class LoginViewModel @Inject constructor(
     }
 
     fun login(email: String, password: String) {
-        viewModelScope.launch {
-            loginUseCase.login(email, password).collect {
-                when (it.status) {
-                    Status.SUCCESS -> {
-                        loggedInLiveData.value = true
-                        setIsLoading(false)
-                    }
-                    Status.ERROR -> {
-                        setErrorMessage(it.message)
-                        setIsLoading(false)
-                    }
-                    Status.LOADING -> {
-                        setIsLoading(true)
-                    }
-                }
-            }
-        }
+        launchAsync({ loginUseCase.login(email, password) }, onSuccess = {
+            loggedInLiveData.value = true
+        })
     }
 }
