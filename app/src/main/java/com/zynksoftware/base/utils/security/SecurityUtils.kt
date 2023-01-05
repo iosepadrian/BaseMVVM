@@ -19,7 +19,7 @@ import javax.inject.Inject
 class SecurityUtils @Inject constructor(@ApplicationContext private val context: Context, private val alertDialogDisplayer: AlertDialogDisplayer) {
 
     fun checkSecurity(): Boolean {
-        if (CommonUtils.isRooted(context)) {
+        if (CommonUtils.isRooted()) {
             alertDialogDisplayer.showAlertDialog(context.getString(R.string.error_label), context.getString(R.string.device_rooted))
             return false
         }
