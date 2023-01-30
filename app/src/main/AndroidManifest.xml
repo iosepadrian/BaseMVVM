@@ -35,7 +35,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".developeroptions.DeveloperActivity"
+            android:name=".developeroptions.ui.developer.DeveloperActivity"
             android:exported="false"/>
         <activity android:name=".developeroptions.recyclerview.PagingActivity"
             android:exported="false"/>

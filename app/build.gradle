@@ -47,6 +47,37 @@ android {
             manifestPlaceholders = [enableCrashReporting:"true"]
         }
     }
+
+    flavorDimensions "build"
+    productFlavors {
+        staging {
+            dimension "build"
+            //TODO set different variables for different builds as needed
+            buildConfigField 'String', 'SERVER_URL', '"http://192.168.199.218:8080/"'
+            buildConfigField 'String', 'STAGING_SERVER_URL', '""'
+            buildConfigField 'String', 'PRODUCTION_SERVER_URL', '""'
+            buildConfigField 'boolean', 'SHOULD_SHOW_DEV_SCREEN', "false"
+        }
+
+        production {
+            dimension "build"
+            //TODO set different variables for different builds as needed
+            buildConfigField 'String', 'SERVER_URL', '"http://192.168.199.218:8080/"'
+            buildConfigField 'String', 'STAGING_SERVER_URL', '""'
+            buildConfigField 'String', 'PRODUCTION_SERVER_URL', '""'
+            buildConfigField 'boolean', 'SHOULD_SHOW_DEV_SCREEN', "false"
+        }
+
+        beta {
+            dimension "build"
+            //TODO set different variables for different builds as needed
+            buildConfigField 'String', 'SERVER_URL', '"http://192.168.199.218:8080/"'
+            buildConfigField 'String', 'STAGING_SERVER_URL', '"http://192.168.199.218:8080/"'
+            buildConfigField 'String', 'PRODUCTION_SERVER_URL', '"http://192.168.199.218:8080/"'
+            buildConfigField 'boolean', 'SHOULD_SHOW_DEV_SCREEN', "true"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8

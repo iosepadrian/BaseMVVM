@@ -1,4 +1,4 @@
-package com.zynksoftware.base.developeroptions
+package com.zynksoftware.base.developeroptions.utils
 
 import android.content.Context
 import android.net.Uri

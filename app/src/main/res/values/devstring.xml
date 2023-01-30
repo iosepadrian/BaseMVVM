@@ -39,4 +39,10 @@
     <string name="message_content">Here you have attached the registered log files</string>
     <string name="sending_email">Sending email…</string>
     <string name="request_toast">Request failed try again:&#160;</string>
+
+    <string name="change_environment">Change environment</string>
+    <string name="choose_an_environment">Choose an environment</string>
+    <string name="default_string">Default</string>
+    <string name="production">Production</string>
+    <string name="staging">Staging</string>
 </resources>

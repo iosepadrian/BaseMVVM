@@ -1,4 +1,4 @@
-package com.zynksoftware.base.developeroptions
+package com.zynksoftware.base.developeroptions.ui.developer
 
 import android.content.Context
 import android.content.Intent
@@ -9,12 +9,16 @@ import com.zynksoftware.base.R
 import com.zynksoftware.base.databinding.ActivityDeveloperBinding
 import com.zynksoftware.base.developeroptions.recyclerview.PagingActivity
 import com.zynksoftware.base.developeroptions.recyclerview.SimpleRecyclerViewActivity
+import com.zynksoftware.base.developeroptions.ui.ChangeEnvironmentFragment
+import com.zynksoftware.base.developeroptions.utils.DeveloperUtils
+import com.zynksoftware.base.developeroptions.utils.LogProvider
 import com.zynksoftware.base.ui.common.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class DeveloperActivity : BaseActivity<ActivityDeveloperBinding>(ActivityDeveloperBinding::inflate) {
+class DeveloperActivity : BaseActivity<ActivityDeveloperBinding>(ActivityDeveloperBinding::inflate),
+    ChangeEnvironmentFragment.ChangeEnvironmentListener {
     @Inject
     lateinit var logProvider: LogProvider
     private val developerViewModel: DeveloperViewModel by viewModels()
@@ -48,6 +52,14 @@ class DeveloperActivity : BaseActivity<ActivityDeveloperBinding>(ActivityDevelop
         }
         binding.simpleRecycler.setOnClickListener {
             SimpleRecyclerViewActivity.start(this)
+        }
+        binding.changeEnvironment.setOnClickListener {
+            val changeEnvironmentFragment = ChangeEnvironmentFragment.newInstance()
+            changeEnvironmentFragment.show(
+                supportFragmentManager,
+                ChangeEnvironmentFragment::class.java.simpleName
+            )
+            changeEnvironmentFragment.setChangeEnvironmentListener(this)
         }
     }
 
@@ -102,5 +114,25 @@ class DeveloperActivity : BaseActivity<ActivityDeveloperBinding>(ActivityDevelop
             }
             showToast(message)
         }
+    }
+
+    override fun getEnvironment(): String? {
+        return developerViewModel.getEnvironment()
+    }
+
+    override fun getServerURL(): String? {
+        return developerViewModel.getServerURL()
+    }
+
+    override fun setEnvironment(environment: String) {
+        developerViewModel.setEnvironment(environment)
+    }
+
+    override fun setServerURL(url: String) {
+        developerViewModel.setServerURL(url)
+    }
+
+    override fun logout() {
+        developerViewModel.logout()
     }
 }

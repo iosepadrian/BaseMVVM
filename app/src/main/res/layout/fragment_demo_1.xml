@@ -11,20 +11,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/developerActivityButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
         android:layout_marginTop="16dp"
+        android:text="Tap here to open developer activity"
+        android:textColor="@color/black"
         android:textSize="22dp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/toolbarComponent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Tap here to open developer activity"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarComponent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
