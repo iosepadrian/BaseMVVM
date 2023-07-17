@@ -132,7 +132,7 @@ class DeveloperActivity : BaseActivity<ActivityDeveloperBinding>(ActivityDevelop
         developerViewModel.setServerURL(url)
     }
 
-    override fun logout() {
+    override suspend fun logout() {
         developerViewModel.logout()
     }
 }

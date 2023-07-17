@@ -12,6 +12,9 @@ import com.google.android.material.switchmaterial.SwitchMaterial
 import com.zynksoftware.base.BuildConfig
 import com.zynksoftware.base.databinding.FragmentChangeEnvironmentBinding
 import com.zynksoftware.base.ui.MainActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class ChangeEnvironmentFragment : DialogFragment() {
 
@@ -36,7 +39,7 @@ class ChangeEnvironmentFragment : DialogFragment() {
 
         fun setServerURL(url: String)
 
-        fun logout()
+        suspend fun logout()
     }
 
     fun setChangeEnvironmentListener(listener: ChangeEnvironmentListener) {
@@ -94,10 +97,12 @@ class ChangeEnvironmentFragment : DialogFragment() {
     }
 
     private fun changeEnvironment(environment: String, serverURL: String) {
-        listener?.logout()
-        listener?.setEnvironment(environment)
-        listener?.setServerURL(serverURL)
-        triggerRestart(requireActivity())
+        CoroutineScope(Dispatchers.IO).launch {
+            listener?.logout()
+            listener?.setEnvironment(environment)
+            listener?.setServerURL(serverURL)
+            triggerRestart(requireActivity())
+        }
     }
 
     private fun triggerRestart(context: Activity) {

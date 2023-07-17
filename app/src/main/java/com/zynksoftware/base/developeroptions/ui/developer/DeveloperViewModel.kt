@@ -12,6 +12,7 @@ import com.zynksoftware.base.developeroptions.utils.DeveloperUtils
 import com.zynksoftware.base.ui.common.BaseViewModel
 import com.zynksoftware.base.utils.StringResource
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import javax.inject.Inject
 
 @HiltViewModel
@@ -103,8 +104,9 @@ class DeveloperViewModel @Inject constructor(
         )
     }
 
-    fun logout() {
+    suspend fun logout() {
         //TODO logout user and clear any session of the user before restarting app and change env
+        delay(3000)
     }
 
     fun getServerURL(): String? {
