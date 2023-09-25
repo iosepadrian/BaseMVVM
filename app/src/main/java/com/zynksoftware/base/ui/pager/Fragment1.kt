@@ -1,9 +1,10 @@
 package com.zynksoftware.base.ui.pager
 
 import android.os.Bundle
+import com.zynksoftware.base.BuildConfig
+import com.zynksoftware.base.common.extensions.makeLinks
 import com.zynksoftware.base.databinding.FragmentDemo1Binding
 import com.zynksoftware.base.developeroptions.DeveloperActivity
-import com.zynksoftware.base.common.extensions.makeLinks
 import com.zynksoftware.base.ui.common.BaseFragment
 import com.zynksoftware.base.ui.common.BaseViewModel
 
@@ -25,5 +26,6 @@ class Fragment1 : BaseFragment<FragmentDemo1Binding>(FragmentDemo1Binding::infla
                 DeveloperActivity.start(requireActivity())
             })
         )
+        binding?.textViewVersion?.text = "${BuildConfig.VERSION_NAME} - ${BuildConfig.VERSION_CODE}"
     }
 }

@@ -2,6 +2,7 @@ package com.zynksoftware.base
 
 import android.app.Application
 import android.content.Context
+import com.google.firebase.FirebaseApp
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.gson.GsonBuilder
 import com.zynksoftware.base.analytics.AnalyticsUtil
@@ -17,8 +18,10 @@ class BaseApplication : Application() {
 
         appContext = applicationContext
 
+        FirebaseApp.initializeApp(appContext)
+
         initInterceptor()
-        //initCrashlytics()
+        initCrashlytics()
         AnalyticsUtil.setUserProperties(applicationContext)
         initStoro()
     }

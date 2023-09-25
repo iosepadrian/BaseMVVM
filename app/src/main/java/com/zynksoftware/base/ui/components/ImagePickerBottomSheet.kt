@@ -30,12 +30,7 @@ class ImagePickerBottomSheet : BottomSheetDialogFragment() {
 
     var listener: ImagePickerBottomSheetListener? = null
 
-    @Nullable
-    override fun onCreateView(
-        @NonNull inflater: LayoutInflater,
-        @Nullable container: ViewGroup?,
-        @Nullable savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = ImagePickerBottomSheetBinding.inflate(inflater, container, false)
         return binding!!.root
     }

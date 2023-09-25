@@ -31,4 +31,7 @@
     <string name="biometric_dialog_subtitle">Log in using your biometric credential</string>
     <string name="biometric_dialog_negative_button">Use account password</string>
 
+    <string name="lbl_app_update_title">App Update</string>
+    <string name="lbl_app_update_message">An update has just been downloaded, you need to restart the application for the update to take effect</string>
+    <string name="lbl_restart">Restart</string>
 </resources>
