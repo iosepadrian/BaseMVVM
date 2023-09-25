@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit
 
 object AppModuleUtils {
 
-    fun provideOkHttpClient(): OkHttpClient {
+    fun provideOkHttpClient(authorizationInterceptor: AuthorizationInterceptor): OkHttpClient {
         val okHttpClientBuilder = OkHttpClient.Builder()
 
         AppConfig.addInterceptors(okHttpClientBuilder)
@@ -24,7 +24,7 @@ object AppModuleUtils {
             .addInterceptor(NetworkNotAvailableInterceptor())
 //        .addInterceptor(BasicInterceptor())
 //        .addInterceptor(VersioningInterceptor())
-            .addInterceptor(AuthorizationInterceptor())
+            .addInterceptor(authorizationInterceptor)
             .authenticator(RefreshTokenAuthenticator())
             .connectTimeout(1, TimeUnit.MINUTES)
             .readTimeout(1, TimeUnit.MINUTES)

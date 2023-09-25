@@ -10,9 +10,7 @@ import okhttp3.Request
 import okhttp3.Response
 import javax.inject.Inject
 
-class AuthorizationInterceptor : Interceptor {
-
-    @Inject lateinit var getTokenUseCase: GetTokenUseCase
+class AuthorizationInterceptor @Inject constructor(var getTokenUseCase: GetTokenUseCase) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val newRequest = chain.request().signedRequest()

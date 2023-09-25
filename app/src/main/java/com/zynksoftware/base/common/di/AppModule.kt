@@ -5,8 +5,10 @@ import android.content.SharedPreferences
 import com.squareup.moshi.Moshi
 import com.zynksoftware.base.BuildConfigUtils
 import com.zynksoftware.base.developeroptions.utils.LogProvider
+import com.zynksoftware.base.network.interceptors.AuthorizationInterceptor
 import com.zynksoftware.base.network.services.ApiService
 import com.zynksoftware.base.network.services.ServiceProvider
+import com.zynksoftware.base.usecase.GetTokenUseCase
 import com.zynksoftware.base.utils.StringResourceProvider
 import dagger.Module
 import dagger.Provides
@@ -25,8 +27,13 @@ class AppModule {
     }
 
     @Provides
-    fun providesOkHttp(): OkHttpClient {
-        return AppModuleUtils.provideOkHttpClient()
+    fun provideAuthorizationInterceptor(getTokenUseCase: GetTokenUseCase): AuthorizationInterceptor {
+        return AuthorizationInterceptor(getTokenUseCase)
+    }
+
+    @Provides
+    fun providesOkHttp(authorizationInterceptor: AuthorizationInterceptor): OkHttpClient {
+        return AppModuleUtils.provideOkHttpClient(authorizationInterceptor)
     }
 
     @Provides

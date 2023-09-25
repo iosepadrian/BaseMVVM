@@ -30,13 +30,13 @@ class TestApiFragment : BaseFragment<FragmentTestApiBinding>(FragmentTestApiBind
 
         loginCallButton.setOnClickListener {
             //TODO add edittext validation
-            viewModel.login(LoginRequestBody(usernameEditText.text.toString(), passwordEditText.text.toString(), "Android"))
+            viewModel.login(LoginRequestBody(usernameEditText.text.toString(), passwordEditText.text.toString(), "ANDROID"))
         }
 
         registerCallButton.setOnClickListener {
             //TODO add edittext validation
             //TODO not tested yet
-            viewModel.register(RegisterRequestBody(usernameEditText.text.toString(), passwordEditText.text.toString(),"Android", false))
+            viewModel.register(RegisterRequestBody(usernameEditText.text.toString(), passwordEditText.text.toString(),"ANDROID", false))
         }
 
         logoutCallButton.setOnClickListener {
@@ -48,6 +48,10 @@ class TestApiFragment : BaseFragment<FragmentTestApiBinding>(FragmentTestApiBind
         }
 
         observe(viewModel.registerResponseLiveData) {
+            responseTextView.text = it
+        }
+
+        observe(viewModel.errorMessage) {
             responseTextView.text = it
         }
     }

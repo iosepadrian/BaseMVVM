@@ -2,11 +2,12 @@ package com.zynksoftware.base.network.common
 
 import android.content.SharedPreferences
 import com.zynksoftware.base.network.services.ApiService
+import dagger.Lazy
 import javax.inject.Inject
 
 class TokenManager @Inject constructor(
     private val sharedPreferences: SharedPreferences,
-    private val apiService: ApiService
+    private val apiService: Lazy<ApiService>
 ) {
 
     companion object {
@@ -37,7 +38,7 @@ class TokenManager @Inject constructor(
      * We therefore need to call this asynchronous token refresh process synchronously
      */
     fun fetchNewTokenCall(): String? {
-        val refreshTokenResponse = apiService.refreshToken(refreshToken = getRefreshToken()).execute()
+        val refreshTokenResponse = apiService.get().refreshToken(refreshToken = getRefreshToken()).execute()
         return if (refreshTokenResponse.isSuccessful) {
             saveToken(refreshTokenResponse.body()!!)
             getAccessToken()

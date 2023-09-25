@@ -1,8 +1,9 @@
 package com.zynksoftware.base.usecase
 
 import com.zynksoftware.base.network.common.TokenManager
+import javax.inject.Inject
 
-class GetTokenUseCase(private val tokenManager: TokenManager) {
+class GetTokenUseCase @Inject constructor(private val tokenManager: TokenManager) {
 
     fun getAccessTokenValid(): String {
         return if(tokenManager.isAccessTokenExpired()) {
