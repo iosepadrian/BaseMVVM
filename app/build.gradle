@@ -20,7 +20,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField 'String', 'SERVER_URL', '"http://192.168.199.218:8080/"'
+        buildConfigField 'String', 'SERVER_URL', '"http://10.75.0.17:8080/"'
 
         buildConfigField 'String', 'CREDENTIALS_USERNAME', '"GUILDA_CLIENT"'   //TODO - add credentials for basic auth
         buildConfigField 'String', 'CREDENTIALS_PASSWORD', '"SECRET"'  //TODO - add credentials for basic auth
@@ -57,7 +57,7 @@ android {
         staging {
             dimension "build"
             //TODO set different variables for different builds as needed
-            buildConfigField 'String', 'SERVER_URL', '"http://192.168.199.218:8080/"'
+            buildConfigField 'String', 'SERVER_URL', '"http://10.77.0.93:8081/"'
             buildConfigField 'String', 'STAGING_SERVER_URL', '""'
             buildConfigField 'String', 'PRODUCTION_SERVER_URL', '""'
             buildConfigField 'boolean', 'SHOULD_SHOW_DEV_SCREEN', "false"
@@ -66,7 +66,7 @@ android {
         production {
             dimension "build"
             //TODO set different variables for different builds as needed
-            buildConfigField 'String', 'SERVER_URL', '"http://192.168.199.218:8080/"'
+            buildConfigField 'String', 'SERVER_URL', '"http://10.77.0.93:8081/"'
             buildConfigField 'String', 'STAGING_SERVER_URL', '""'
             buildConfigField 'String', 'PRODUCTION_SERVER_URL', '""'
             buildConfigField 'boolean', 'SHOULD_SHOW_DEV_SCREEN', "false"
@@ -75,9 +75,9 @@ android {
         beta {
             dimension "build"
             //TODO set different variables for different builds as needed
-            buildConfigField 'String', 'SERVER_URL', '"http://192.168.199.218:8080/"'
-            buildConfigField 'String', 'STAGING_SERVER_URL', '"http://192.168.199.218:8080/"'
-            buildConfigField 'String', 'PRODUCTION_SERVER_URL', '"http://192.168.199.218:8080/"'
+            buildConfigField 'String', 'SERVER_URL', '"http://10.77.0.93:8081/"'
+            buildConfigField 'String', 'STAGING_SERVER_URL', '"http://10.77.0.93:8081/"'
+            buildConfigField 'String', 'PRODUCTION_SERVER_URL', '"http://10.77.0.93:8081/"'
             buildConfigField 'boolean', 'SHOULD_SHOW_DEV_SCREEN', "true"
         }
     }

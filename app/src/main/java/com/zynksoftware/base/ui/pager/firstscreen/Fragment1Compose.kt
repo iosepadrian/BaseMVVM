@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun Fragment1Compose(
     state: FirstState,
-    onButtonClick: () -> Unit,
+    onDeveloperButtonClick: () -> Unit,
     shouldShowDevOptions: Boolean
 ) {
 
@@ -32,7 +32,7 @@ fun Fragment1Compose(
             ClickableText(
                 text = AnnotatedString("Tap here to open developer activity"),
                 onClick = {
-                    onButtonClick.invoke()
+                    onDeveloperButtonClick.invoke()
                 },
                 style = TextStyle(
                     color = Color.Black,

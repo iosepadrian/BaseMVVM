@@ -1,16 +1,19 @@
-package com.zynksoftware.base.ui.login
+package com.zynksoftware.base.ui.testapi
 
 import androidx.lifecycle.MutableLiveData
 import com.zynksoftware.base.models.LoginRequestBody
+import com.zynksoftware.base.models.RegisterRequestBody
 import com.zynksoftware.base.ui.common.BaseViewModel
 import com.zynksoftware.base.usecase.LoginUseCase
+import com.zynksoftware.base.usecase.RegisterUseCase
 import com.zynksoftware.base.utils.ConsumableLiveData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import android.util.Log
+
 @HiltViewModel
-class LoginViewModel @Inject constructor(
-    private val loginUseCase: LoginUseCase
+class TestApiViewModel @Inject constructor(
+    private val loginUseCase: LoginUseCase,
+    private val registerUseCase: RegisterUseCase,
 ) : BaseViewModel() {
 
     val loggedInLiveData: MutableLiveData<Boolean> by lazy {
@@ -21,11 +24,25 @@ class LoginViewModel @Inject constructor(
         ConsumableLiveData(true)
     }
 
+    val registerSuccessfullyLiveData: ConsumableLiveData<Boolean> by lazy {
+        ConsumableLiveData(true)
+    }
+
+    val registerResponseLiveData: ConsumableLiveData<String> by lazy {
+        ConsumableLiveData(true)
+    }
+
     fun login(loginRequestBody: LoginRequestBody) {
         launchAsync({ loginUseCase.login(loginRequestBody) }, onSuccess = {
-            Log.d("adrian", it.toString())
             loginResponseLiveData.setValue(it.toString())
             loggedInLiveData.value = true
+        })
+    }
+
+    fun register(registerRequestBody: RegisterRequestBody) {
+        launchAsync({ registerUseCase.register(registerRequestBody) }, onSuccess = {
+            registerSuccessfullyLiveData.setValue(true)
+            registerResponseLiveData.setValue(it.toString())
         })
     }
 }

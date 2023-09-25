@@ -53,24 +53,26 @@ class TokenManager @Inject constructor(
         } else System.currentTimeMillis() >= tokenExpirationTime
     }
 
-    private fun setAccessTokenExpiresIn(expiresIn: Float) {
+    private fun setAccessTokenExpiresIn(expiresIn: Long) {
         sharedPreferences.edit().putLong(ACCESS_TOKEN_EXPIRES_IN_KEY, (System.currentTimeMillis() + expiresIn).toLong()).apply()
     }
 
     fun saveToken(tokenResponse: TokenResponse) {
-        if (tokenResponse.tokenType != null && tokenResponse.accessToken != null) {
-            val token = tokenResponse.tokenType + " " + tokenResponse.accessToken
-            if (token.trim().isNotEmpty()) {
-                setAccessToken(token)
+        if (tokenResponse.accessToken != null) {
+            val token = tokenResponse.accessToken
+            if (token != null) {
+                if (token.trim().isNotEmpty()) {
+                    setAccessToken(token)
+                }
             }
         }
         tokenResponse.refreshToken?.let { setRefreshToken(it) }
-        tokenResponse.expiresIn?.let { setAccessTokenExpiresIn(it) }
+        tokenResponse.validityMs?.let { setAccessTokenExpiresIn(it) }
     }
 
     fun logout() {
         setAccessToken("")
         setRefreshToken("")
-        setAccessTokenExpiresIn(0.toFloat())
+        setAccessTokenExpiresIn(0L)
     }
 }

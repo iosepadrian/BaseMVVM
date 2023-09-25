@@ -13,8 +13,10 @@ import com.zynksoftware.base.developeroptions.ui.ChangeEnvironmentFragment
 import com.zynksoftware.base.developeroptions.utils.DeveloperUtils
 import com.zynksoftware.base.developeroptions.utils.LogProvider
 import com.zynksoftware.base.ui.common.BaseActivity
+import com.zynksoftware.base.ui.testapi.TestApiFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class DeveloperActivity : BaseActivity<ActivityDeveloperBinding>(ActivityDeveloperBinding::inflate),
@@ -60,6 +62,10 @@ class DeveloperActivity : BaseActivity<ActivityDeveloperBinding>(ActivityDevelop
                 ChangeEnvironmentFragment::class.java.simpleName
             )
             changeEnvironmentFragment.setChangeEnvironmentListener(this)
+        }
+        binding.testAPIButton.setOnClickListener {
+            supportFragmentManager.beginTransaction()
+                .add(android.R.id.content, TestApiFragment.newInstance()).commit();
         }
     }
 

@@ -45,7 +45,7 @@ class Fragment1 : Fragment() {
             val state by viewModel.state.collectAsState()
             Fragment1Compose(
                 state = state,
-                onButtonClick = { DeveloperActivity.start(requireActivity()) },
+                onDeveloperButtonClick = { DeveloperActivity.start(requireActivity()) },
                 shouldShowDevOptions = buildConfigUtils.shouldShowDeveloperOption()
             )
         }

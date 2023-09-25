@@ -107,6 +107,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:titleText="Simple RecyclerView" />
 
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
+                android:id="@+id/testAPIButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/dark_gray"
+                app:hasSwitch="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:titleText="Test API" />
+
+
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

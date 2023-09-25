@@ -30,5 +30,11 @@
     <string name="biometric_dialog_title">Biometric login for my app</string>
     <string name="biometric_dialog_subtitle">Log in using your biometric credential</string>
     <string name="biometric_dialog_negative_button">Use account password</string>
+    <string name="this_is_the_response">This is the response</string>
+    <string name="call_login">Call login</string>
+    <string name="call_register">Call Register</string>
+    <string name="call_logout">Call Logout</string>
+    <string name="type_here_your_password">Type here your password</string>
+    <string name="type_here_your_username">Type here your username</string>
 
 </resources>
