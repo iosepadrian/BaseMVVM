@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.activity.viewModels
+import com.zynksoftware.base.BuildConfigUtils
 import com.zynksoftware.base.R
 import com.zynksoftware.base.databinding.ActivityDeveloperBinding
 import com.zynksoftware.base.developeroptions.recyclerview.PagingActivity
@@ -13,6 +14,7 @@ import com.zynksoftware.base.developeroptions.ui.ChangeEnvironmentFragment
 import com.zynksoftware.base.developeroptions.utils.DeveloperUtils
 import com.zynksoftware.base.developeroptions.utils.LogProvider
 import com.zynksoftware.base.ui.common.BaseActivity
+import com.zynksoftware.base.utils.accessibility.getFontScale
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -21,6 +23,10 @@ class DeveloperActivity : BaseActivity<ActivityDeveloperBinding>(ActivityDevelop
     ChangeEnvironmentFragment.ChangeEnvironmentListener {
     @Inject
     lateinit var logProvider: LogProvider
+
+    @Inject
+    lateinit var buildConfigUtils: BuildConfigUtils
+
     private val developerViewModel: DeveloperViewModel by viewModels()
 
     companion object {
@@ -61,6 +67,9 @@ class DeveloperActivity : BaseActivity<ActivityDeveloperBinding>(ActivityDevelop
             )
             changeEnvironmentFragment.setChangeEnvironmentListener(this)
         }
+
+        binding.fontScale.setSubtitleText("${getFontScale()}")
+        binding.serverUrl.setSubtitleText("${buildConfigUtils.getServerURL()}")
     }
 
     private fun initExportButton() {
