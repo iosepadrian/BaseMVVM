@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.text.ClickableText
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -13,6 +14,7 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.sp
+import com.zynksoftware.base.BuildConfig
 
 @Composable
 fun Fragment1Compose(
@@ -34,6 +36,14 @@ fun Fragment1Compose(
                 onClick = {
                     onButtonClick.invoke()
                 },
+                style = TextStyle(
+                    color = Color.Black,
+                    fontStyle = FontStyle.Italic,
+                    fontSize = 20.sp
+                )
+            )
+            Text(
+                text = "Version Code: ${BuildConfig.VERSION_CODE}",
                 style = TextStyle(
                     color = Color.Black,
                     fontStyle = FontStyle.Italic,

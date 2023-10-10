@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "750536736530",
+    "project_id": "android-base-7c58e",
+    "storage_bucket": "android-base-7c58e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750536736530:android:89a3f59a7960f854973dcb",
+        "android_client_info": {
+          "package_name": "com.zynksoftware.base"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "750536736530-2pfgoonma6qgnhamupi2hbb4ie8jbjht.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNJnLuu9zvxogez8gnz6eQ1ybJ-H6nSRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "750536736530-2pfgoonma6qgnhamupi2hbb4ie8jbjht.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
