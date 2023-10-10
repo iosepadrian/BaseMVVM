@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/dark_gray"
-        tools:context=".developeroptions.DeveloperActivity">
+        tools:context=".developeroptions.ui.developer.DeveloperActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -73,6 +73,17 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:titleText="@string/export_logs" />
+
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
+                android:id="@+id/changeEnvironment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/dark_gray"
+                app:hasSwitch="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:titleText="@string/change_environment" />
 
             <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
                 android:id="@+id/pagingRecycler"

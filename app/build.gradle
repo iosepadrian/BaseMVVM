@@ -30,6 +30,10 @@ android {
         viewBinding true
     }
 
+    buildFeatures {
+        compose true
+    }
+
     buildTypes {
         debug {
             debuggable true
@@ -47,6 +51,37 @@ android {
             manifestPlaceholders = [enableCrashReporting:"true"]
         }
     }
+
+    flavorDimensions "build"
+    productFlavors {
+        staging {
+            dimension "build"
+            //TODO set different variables for different builds as needed
+            buildConfigField 'String', 'SERVER_URL', '"http://192.168.199.218:8080/"'
+            buildConfigField 'String', 'STAGING_SERVER_URL', '""'
+            buildConfigField 'String', 'PRODUCTION_SERVER_URL', '""'
+            buildConfigField 'boolean', 'SHOULD_SHOW_DEV_SCREEN', "false"
+        }
+
+        production {
+            dimension "build"
+            //TODO set different variables for different builds as needed
+            buildConfigField 'String', 'SERVER_URL', '"http://192.168.199.218:8080/"'
+            buildConfigField 'String', 'STAGING_SERVER_URL', '""'
+            buildConfigField 'String', 'PRODUCTION_SERVER_URL', '""'
+            buildConfigField 'boolean', 'SHOULD_SHOW_DEV_SCREEN', "false"
+        }
+
+        beta {
+            dimension "build"
+            //TODO set different variables for different builds as needed
+            buildConfigField 'String', 'SERVER_URL', '"http://192.168.199.218:8080/"'
+            buildConfigField 'String', 'STAGING_SERVER_URL', '"http://192.168.199.218:8080/"'
+            buildConfigField 'String', 'PRODUCTION_SERVER_URL', '"http://192.168.199.218:8080/"'
+            buildConfigField 'boolean', 'SHOULD_SHOW_DEV_SCREEN', "true"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -57,6 +92,21 @@ android {
 }
 
 dependencies {
+
+    constraints {
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
+            because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
+        }
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0") {
+            because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
+        }
+    }
+
+    implementation "androidx.compose.material:material:1.4.3"
+    implementation "androidx.compose.compiler:compiler:1.4.8"
+    implementation "androidx.compose.ui:ui-tooling-preview:1.4.3"
+    implementation 'androidx.activity:activity-compose:1.7.2'
+    debugImplementation "androidx.compose.ui:ui-tooling:1.4.3"
 
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 

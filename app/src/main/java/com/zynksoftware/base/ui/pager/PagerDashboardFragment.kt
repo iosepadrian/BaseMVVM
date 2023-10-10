@@ -8,6 +8,7 @@ import com.zynksoftware.base.databinding.FragmentPagerDashboardBinding
 import com.zynksoftware.base.common.extensions.observe
 import com.zynksoftware.base.ui.common.BaseFragment
 import com.zynksoftware.base.ui.common.SharedViewModel
+import com.zynksoftware.base.ui.pager.firstscreen.Fragment1
 import com.zynksoftware.base.ui.pager.components.NavigationModel
 import com.zynksoftware.base.ui.pager.components.OnPageChangedListener
 import dagger.hilt.android.AndroidEntryPoint

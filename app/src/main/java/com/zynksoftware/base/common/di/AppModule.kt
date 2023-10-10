@@ -3,7 +3,8 @@ package com.zynksoftware.base.common.di
 import android.content.Context
 import android.content.SharedPreferences
 import com.squareup.moshi.Moshi
-import com.zynksoftware.base.developeroptions.LogProvider
+import com.zynksoftware.base.BuildConfigUtils
+import com.zynksoftware.base.developeroptions.utils.LogProvider
 import com.zynksoftware.base.network.services.ApiService
 import com.zynksoftware.base.network.services.ServiceProvider
 import com.zynksoftware.base.utils.StringResourceProvider
@@ -19,8 +20,8 @@ import okhttp3.OkHttpClient
 class AppModule {
 
     @Provides
-    fun provideApiService(moshi: Moshi, okHttpClient: OkHttpClient): ApiService {
-        return ServiceProvider(moshi, okHttpClient).createApiService()
+    fun provideApiService(moshi: Moshi, okHttpClient: OkHttpClient, buildConfigUtils: BuildConfigUtils): ApiService {
+        return ServiceProvider(moshi, okHttpClient, buildConfigUtils).createApiService()
     }
 
     @Provides

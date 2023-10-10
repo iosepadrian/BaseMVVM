@@ -1,4 +1,4 @@
-package com.zynksoftware.base.developeroptions
+package com.zynksoftware.base.developeroptions.ui.developer
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,9 +7,12 @@ import android.os.Build
 import android.util.DisplayMetrics
 import com.zynksoftware.base.BuildConfig
 import com.zynksoftware.base.R
+import com.zynksoftware.base.developeroptions.DeveloperSessionManager
+import com.zynksoftware.base.developeroptions.utils.DeveloperUtils
 import com.zynksoftware.base.ui.common.BaseViewModel
 import com.zynksoftware.base.utils.StringResource
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import javax.inject.Inject
 
 @HiltViewModel
@@ -99,5 +102,26 @@ class DeveloperViewModel @Inject constructor(
                 stringResource.getString(R.string.sending_email)
             )
         )
+    }
+
+    suspend fun logout() {
+        //TODO logout user and clear any session of the user before restarting app and change env
+        delay(3000)
+    }
+
+    fun getServerURL(): String? {
+        return developerSessionManager.getServerURL()
+    }
+
+    fun setServerURL(url: String) {
+        developerSessionManager.setServerURL(url)
+    }
+
+    fun getEnvironment(): String? {
+        return developerSessionManager.getEnvironment()
+    }
+
+    fun setEnvironment(environment: String) {
+        developerSessionManager.setEnvironment(environment)
     }
 }
