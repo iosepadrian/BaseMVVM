@@ -41,7 +41,7 @@ class FirebaseRemoteConfigUtils(private val activity: Activity) {
                     // otherwise check for flexible update if there is some new updates available
                     if (BuildConfig.VERSION_CODE < buildNumberMandatory) {
                         onComplete.invoke(InAppUpdateType.IMMEDIATE)
-                    } else if (BuildConfig.VERSION_CODE > buildNumberMandatory){
+                    } else {
                         onComplete.invoke(InAppUpdateType.FLEXIBLE)
                     }
                 } else {
