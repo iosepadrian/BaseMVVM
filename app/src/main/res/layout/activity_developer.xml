@@ -42,6 +42,28 @@
                 app:titleText="@string/device_details" />
 
             <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
+                android:id="@+id/fontScale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/dark_gray"
+                app:hasSwitch="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:titleText="Font scale" />
+
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
+                android:id="@+id/serverUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/dark_gray"
+                app:hasSwitch="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:titleText="Server Url" />
+
+            <com.zynksoftware.base.developeroptions.components.DeveloperButtonComponent
                 android:id="@+id/keepScreenOn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

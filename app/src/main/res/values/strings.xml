@@ -42,4 +42,7 @@
     <string name="role_id">Role id</string>
     <string name="logout_call">Logout call</string>
 
+    <string name="lbl_app_update_title">App Update</string>
+    <string name="lbl_app_update_message">An update has just been downloaded, you need to restart the application for the update to take effect</string>
+    <string name="lbl_restart">Restart</string>
 </resources>
