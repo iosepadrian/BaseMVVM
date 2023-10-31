@@ -11,7 +11,6 @@ import android.util.Log
 class ServiceProvider(private val moshi: Moshi, private val okHttpClient: OkHttpClient, private val buildConfigUtils: BuildConfigUtils) {
 
     fun createApiService(): ApiService {
-        Log.d("adrian", buildConfigUtils.getServerURL().toString())
         val retrofitBuilder = Retrofit.Builder()
             .baseUrl(buildConfigUtils.getServerURL()!!)
             .addConverterFactory(MoshiConverterFactory.create(moshi))

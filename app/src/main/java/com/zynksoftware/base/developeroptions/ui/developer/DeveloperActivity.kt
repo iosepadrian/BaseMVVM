@@ -13,7 +13,7 @@ import com.zynksoftware.base.developeroptions.ui.ChangeEnvironmentFragment
 import com.zynksoftware.base.developeroptions.utils.DeveloperUtils
 import com.zynksoftware.base.developeroptions.utils.LogProvider
 import com.zynksoftware.base.ui.common.BaseActivity
-import com.zynksoftware.base.ui.testapi.TestApiFragment
+import com.zynksoftware.base.developeroptions.ui.testapi.TestApiFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

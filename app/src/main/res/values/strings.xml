@@ -36,5 +36,10 @@
     <string name="call_logout">Call Logout</string>
     <string name="type_here_your_password">Type here your password</string>
     <string name="type_here_your_username">Type here your username</string>
+    <string name="call_forgot_password">Call forgot password</string>
+    <string name="call_get_roles">Call get roles</string>
+    <string name="call_edit_role">Call edit role</string>
+    <string name="role_id">Role id</string>
+    <string name="logout_call">Logout call</string>
 
 </resources>

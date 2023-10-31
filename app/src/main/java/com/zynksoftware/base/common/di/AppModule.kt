@@ -8,7 +8,7 @@ import com.zynksoftware.base.developeroptions.utils.LogProvider
 import com.zynksoftware.base.network.interceptors.AuthorizationInterceptor
 import com.zynksoftware.base.network.services.ApiService
 import com.zynksoftware.base.network.services.ServiceProvider
-import com.zynksoftware.base.usecase.GetTokenUseCase
+import com.zynksoftware.base.developeroptions.usecase.GetTokenUseCase
 import com.zynksoftware.base.utils.StringResourceProvider
 import dagger.Module
 import dagger.Provides

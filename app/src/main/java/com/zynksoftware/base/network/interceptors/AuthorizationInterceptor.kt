@@ -3,7 +3,7 @@ package com.zynksoftware.base.network.interceptors
 import com.zynksoftware.base.BuildConfig
 import com.zynksoftware.base.common.extensions.signWithToken
 import com.zynksoftware.base.network.common.AuthorizationType
-import com.zynksoftware.base.usecase.GetTokenUseCase
+import com.zynksoftware.base.developeroptions.usecase.GetTokenUseCase
 import okhttp3.Credentials
 import okhttp3.Interceptor
 import okhttp3.Request
@@ -18,7 +18,7 @@ class AuthorizationInterceptor @Inject constructor(var getTokenUseCase: GetToken
     }
 
     private fun Request.signedRequest() = when (AuthorizationType.fromRequest(this)) {
-        AuthorizationType.ACCESS_TOKEN -> this.signWithToken(getTokenUseCase.getAccessTokenFromCache())
+        AuthorizationType.ACCESS_TOKEN -> this.signWithToken(getTokenUseCase.getAccessTokenValid())
         AuthorizationType.CLIENT_CREDENTIALS -> this.signWithToken(Credentials.basic(BuildConfig.CREDENTIALS_USERNAME, BuildConfig.CREDENTIALS_PASSWORD))
         AuthorizationType.NONE -> this
     }

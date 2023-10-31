@@ -4,6 +4,7 @@ import android.content.SharedPreferences
 import com.zynksoftware.base.network.services.ApiService
 import dagger.Lazy
 import javax.inject.Inject
+import android.util.Log
 
 class TokenManager @Inject constructor(
     private val sharedPreferences: SharedPreferences,
@@ -14,6 +15,7 @@ class TokenManager @Inject constructor(
         private const val ACCESS_TOKEN = "ACCESS_TOKEN"
         private const val REFRESH_TOKEN = "REFRESH_TOKEN"
         private const val ACCESS_TOKEN_EXPIRES_IN_KEY = "TOKEN_EXPIRES_IN_KEY"
+        private const val BEARER_STRING = "Bearer"
     }
 
     private fun setAccessToken(accessToken: String) {
@@ -21,7 +23,7 @@ class TokenManager @Inject constructor(
     }
 
     fun getAccessToken(): String {
-        return sharedPreferences.getString(ACCESS_TOKEN, "") ?: ""
+        return "$BEARER_STRING ${sharedPreferences.getString(ACCESS_TOKEN, "") ?: ""}"
     }
 
     private fun setRefreshToken(refreshToken: String) {

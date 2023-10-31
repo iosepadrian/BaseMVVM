@@ -1,4 +1,4 @@
-package com.zynksoftware.base.usecase
+package com.zynksoftware.base.developeroptions.usecase
 
 import com.zynksoftware.base.models.LoginRequestBody
 import com.zynksoftware.base.network.common.Resource

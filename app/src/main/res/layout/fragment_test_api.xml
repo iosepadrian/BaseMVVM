@@ -30,6 +30,19 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent">
 
+        <Button
+            android:id="@+id/switchButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Roles calls"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            />
+
         <EditText
             android:id="@+id/usernameEditText"
             android:layout_width="match_parent"
@@ -38,7 +51,7 @@
             android:hint="@string/type_here_your_username"
             android:textColorHint="@color/gray_400"
             android:textColor="@color/white"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/switchButtons"/>
 
         <EditText
             android:id="@+id/passwordEditText"
@@ -50,6 +63,17 @@
             android:layout_marginTop="10dp"
             android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@id/usernameEditText"/>
+
+        <EditText
+            android:id="@+id/roleIdEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:visibility="gone"
+            android:hint="@string/role_id"
+            android:textColorHint="@color/gray_400"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/switchButtons"/>
 
         <Button
             android:id="@+id/loginCallButton"
@@ -70,13 +94,43 @@
             app:layout_constraintTop_toBottomOf="@id/loginCallButton" />
 
         <Button
+            android:id="@+id/forgotPasswordCallButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/call_forgot_password"
+            app:layout_constraintTop_toBottomOf="@id/registerCallButton" />
+
+
+        <Button
             android:id="@+id/logoutCallButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="10dp"
-            android:text="@string/call_logout"
-            app:layout_constraintTop_toBottomOf="@id/registerCallButton" />
+            android:text="@string/logout_call"
+            app:layout_constraintTop_toBottomOf="@id/forgotPasswordCallButton" />
+
+        <Button
+            android:id="@+id/getRolesCallButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:text="@string/call_get_roles"
+            app:layout_constraintTop_toBottomOf="@id/roleIdEditText" />
+
+        <Button
+            android:id="@+id/editRoleCallButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:text="@string/call_edit_role"
+            app:layout_constraintTop_toBottomOf="@id/getRolesCallButton" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

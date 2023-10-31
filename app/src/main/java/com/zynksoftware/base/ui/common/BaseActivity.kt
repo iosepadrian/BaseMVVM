@@ -22,11 +22,15 @@ import androidx.navigation.NavHost
 import androidx.navigation.findNavController
 import androidx.viewbinding.ViewBinding
 import com.google.android.gms.auth.api.phone.SmsRetriever
+import com.zynksoftware.base.common.extensions.disposeIfNotAlready
 import com.zynksoftware.base.common.extensions.observe
+import com.zynksoftware.base.developeroptions.utils.rxbus.RxBus
+import com.zynksoftware.base.developeroptions.utils.rxbus.RxBusEvent
 import com.zynksoftware.base.receivers.sms.SmsBroadcastReceiver
 import com.zynksoftware.base.utils.network.NetworkCallback
 import com.zynksoftware.base.utils.network.NetworkConnection
 import com.zynksoftware.base.utils.sms.SmsUtils
+import io.reactivex.disposables.Disposable
 
 abstract class BaseActivity<B : ViewBinding> (private val viewBinder: (LayoutInflater) -> B): AppCompatActivity() {
 
@@ -75,6 +79,8 @@ abstract class BaseActivity<B : ViewBinding> (private val viewBinder: (LayoutInf
     val activityLauncher: BetterActivityResult<Intent, ActivityResult> =
         BetterActivityResult.registerActivityForResult(this)
 
+    var rxLogoutEvent: Disposable? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
 //        AppConfig.initActivity(window)
         super.onCreate(savedInstanceState)
@@ -95,6 +101,14 @@ abstract class BaseActivity<B : ViewBinding> (private val viewBinder: (LayoutInf
                 showToast(message)
             }
         }
+
+        rxLogoutEvent = RxBus.listen(RxBusEvent.LogOut::class.java)
+            .subscribe {
+                if(it.logout) {
+                    //TODO implement what needed
+                    Toast.makeText(this, "Logout Done !", Toast.LENGTH_LONG).show()
+                }
+            }
     }
 
     override fun onResume() {
@@ -113,6 +127,7 @@ abstract class BaseActivity<B : ViewBinding> (private val viewBinder: (LayoutInf
 
     override fun onDestroy() {
         super.onDestroy()
+        rxLogoutEvent?.disposeIfNotAlready()
         unregisterNetworkCallback()
     }
 

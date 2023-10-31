@@ -19,6 +19,8 @@ object AppConfig {
             return@Interceptor response
         })
 
+        okHttpClientBuilder.addNetworkInterceptor(loggingInterceptor)
+
         //TODO add flipper
         //okHttpClientBuilder.addNetworkInterceptor(FlipperOkhttpInterceptor(networkFlipper))
     }
